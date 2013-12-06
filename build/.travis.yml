@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.10"
+
+before_script:
+  - export DISPLAY=:99.0
+  - npm install --quiet -g grunt-cli bower
+  - bower install
+  - npm install karma ../client/test
+  - npm install protractor ../client/test
+  - npm install karma-jasmine ../client/test
+  - npm install karma-requirejs ../client/test
+
+script: grunt
+

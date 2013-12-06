@@ -1,0 +1,30 @@
+audio, canvas, video { display: inline-block; *display: inline;*zoom: 1;}
+.login span a { text-shadow:1px 1px 1px #fff; }
+.bottom-section .news p, .white_box.content .left a, #main_container header h4, .main_boxes .content h3 ,#main_container .right_sec .login_btn_01 a{ text-shadow:0 1px 0 #fff; }
+#outer-crausel article p { text-shadow:0px 2px 0px #000; }
+.box .mid_section .head { text-shadow:1px -1px 0px #0D2D5C; }
+.bottom-section .ads .box strong { text-shadow:1px 1px 1px #fff; }
+.bottom-section .ads .box span em { text-shadow:1px 1px 1px #fff; }
+.inner_container .login_btn a { text-shadow: 1px 1px 1px #FFFFFF; }
+.inner_container .content { webkit-border-radius:12px 12px 12px 12px; -moz-border-radius:12px 12px 12px 12px; -o-border-radius:12px 12px 12px 12px; border-radius:12px 12px 12px 12px; behavior: url(/j/v3/PIE.htc); position:relative; }
+.content .form_sec .textbox {
+    /*
+    webkit-border-radius:7px 7px 7px 7px;
+    -moz-border-radius:7px 7px 7px 7px;
+    -o-border-radius:7px 7px 7px 7px;
+    border-radius:7px 7px 7px 7px;
+    behavior: url(/j/v3/PIE.htc);
+    position:relative;
+    */
+    -webkit-box-shadow: 0px 1px 0px white;
+    -moz-box-shadow: 0px 1px 0px white;
+    -o-box-shadow: 0px 1px 0px white;
+    box-shadow: 0px 1px 0px white;
+}
+.inner_container .content { -moz-box-shadow: 0px 1px #717171; -webkit-box-shadow: 0px 1px #717171; box-shadow: 0px 1px #717171; behavior: url(/j/v3/PIE.htc); position:relative; }
+#main_container .logo_sec h2 { text-shadow:0px 1px 0px #000000; color:#f5f5f5; }
+.white_box { webkit-border-radius:9px 9px 9px 9px; -moz-border-radius:9px 9px 9px 9px; -o-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px; behavior: url(/j/v3/PIE.htc); position:relative; }
+.main_boxes .content { webkit-border-radius:9px 9px 9px 9px; -moz-border-radius:9px 9px 9px 9px; -o-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px; behavior: url(/j/v3/PIE.htc); position:relative; }
+.small_boxes .content { webkit-border-radius:9px 9px 9px 9px; -moz-border-radius:9px 9px 9px 9px; -o-border-radius:9px 9px 9px 9px; border-radius:9px 9px 9px 9px; behavior: url(/j/v3/PIE.htc); position:relative; }
+.content .bottom_btns ul.bottom_dots li { *display:inline;
+}

@@ -1,0 +1,58 @@
+<div >
+
+    <header>
+        <div class="logo">
+            <h1 style="position:relative;top:-6px;"> <a href="#"><img src="" alt="Mindspace, LLC.">Mindspace Consulting</a> </h1>
+        </div>
+
+        <div class="login_btn" ng-click="register();"><a href="#/signup">Register</a></div>
+    </header>
+
+    <div class="content" >
+
+        <header>
+            <h3>LOG IN</h3>
+            <p ng-hide="hasError">
+                Hello. Great to see you again!
+            </p>
+            <div class="msg" style="height: 15px;" ng-show="hasError">
+                The username or password you entered was incorrect.
+            </div>
+        </header>
+
+        <div class="">
+            <form ng-submit="submit();" novalidate name="login">
+                <fieldset>
+                    <span class="row">
+                        <input type="email" class="textbox" ng-model="email" placeholder="eMail">
+                        <span class="field_msg"></span>
+                    </span>
+
+                    <span class="row">
+                      <input type="password" class="textbox" ng-model="password" placeholder="Password">
+                      <span class="field_msg"></span>
+                    </span>
+
+                    <span class="row forgot">
+                    </span>
+
+                    <input type="hidden" name="form_check" value="nothing">
+                  <input type="submit" value="LOG IN" class="button red main small">
+                </fieldset>
+            </form>
+        </div>
+
+        <footer class="login_extras">
+
+            <p></p>
+            <a href="#" style="display:inline-block;margin-bottom:6px;padding-top: 30px;">I forgot my username or password.</a><br>
+            <a href="#">Don't have a <span style="font-weight: bold;">Quizzler</span> account? Create one in seconds.</a>
+
+        </footer>
+
+    </div>
+
+
+</div>
+
+

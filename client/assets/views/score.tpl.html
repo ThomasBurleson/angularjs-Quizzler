@@ -1,0 +1,41 @@
+<div id="score">
+
+    <h1>Quiz: '{{ title }}'</h1>
+
+    <h3>
+        Your quiz score is {{ grade }}%
+    </h3>
+
+    <br/>
+    <br/>
+
+    <div ng-repeat="score in scores">
+
+        <h4>
+            {{ score.index }}. {{ score.title }}
+        </h4>
+
+        <div ng-if="score.correct" class="correct">
+
+            <p><span >Correct</span></p>
+            <p>{{ score.expected }}</p>
+
+        </div>
+
+        <div ng-if="!score.correct" class="incorrect" >
+
+            <p><span class="correct">You answered incorrectly:</span></p>
+            <p>{{ score.answered }}</p>
+
+            <p><span class="correct">Correct answer was:</span></p>
+            <p>{{ score.expected }}</p>
+
+        </div>
+
+        <br/>
+        <br/>
+
+    </div>
+
+
+</div>

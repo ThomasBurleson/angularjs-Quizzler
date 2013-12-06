@@ -1,0 +1,428 @@
+/*******************common css starts here****************************/
+h1, h2, h3, h4, h5, h6, p, ul, li, body, html, form, fieldset { margin:0; padding:0; outline:none; font-weight:normal; border:0 }
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; margin:0; padding:0; }
+fieldset { float:left; width:100% }
+img { border:0; }
+a { text-decoration:none; border:0; outline:0; }
+.clear { clear:both; line-height:0; height:0; }
+body { font:12px Arial, Helvetica, sans-serif; color:#555555; }
+ul { list-style:none; }
+.lt { float:left; }
+.rt { float:right; }
+/*******************common css ends here****************************/
+
+#outer_layout { width:100%; float:left; }
+#wrapper{ width:1238px; margin:0 auto;}
+#inner_wrapper { width: 1238px; float:left; background: white; box-shadow: 0px 0px 50px rgba(0,0,0,0.5); }
+/*******************login css starts here****************************/
+.layout { width:1003px; margin:0 auto; }
+/*******************login css ends here****************************/
+
+/*******************outer-crausel css starts here****************************/
+#outer-crausel { width:100%; float:left; position:relative; }
+#outer-crausel ul { width:100%; float:left; list-style:none; }
+#outer-crausel ul li { width:1255px; height:540px; float:left; background-position: top center; background-repeat: no-repeat; }
+#outer-crausel article { width:375px; float:right; padding:119px 0px 0 0; }
+#outer-crausel article h2 { padding-bottom:45px; }
+#outer-crausel article p { font:27px/36px 'ProximaNova', Arial, Helvetica, sans-serif; color:#fff; padding:0 0 25px 2px; }
+#outer-crausel article a.signup { width:223px; background:url(/i/v3/signup_btn.png) 0 0 no-repeat; font:24px/50px 'ProximaNovaBold', Arial, Helvetica, sans-serif; display:block; text-align:center; color:#000; margin-top:20px; }
+#outer-crausel article a.signup:hover { background-position:0 -50px; }
+#outer-crausel .bx-pager { position:absolute; right:15%; bottom:20px; z-index:99; }
+#outer-crausel .bx-pager a { width:9px; height:11px; background:url(/i/v3/slide_btn.png) 0 0 no-repeat; float:left; text-indent:-9999px; margin-right:10px; display:inline; }
+#outer-crausel .bx-pager a:hover, #outer-crausel .bx-pager a.pager-active { background:url(/i/v3/slide_btn_active.png) 0 0 no-repeat; }
+#outer-crausel a.bx-prev, #outer-crausel a.bx-next { display:none; }
+/*******************outer-crausel css ends here****************************/
+
+/*******************mid-content css starts here****************************/
+.mid-content { width:977px; float:left; padding:37px 13px 20px 13px }
+.mid-content figure { width:307px; float:left; margin-right:63px; }
+.mid-content figure img { float:left; }
+.mid-content article { width:280px; float:left; padding-top:25px; }
+.mid-content article h3 { font:24px 'ProximaNovaBold', Arial, Helvetica, sans-serif; color:#000; padding:0px 0 21px 0; }
+.mid-content article p { font:16px/21px 'Conv_HelveticaNeueLTStd-Roman', Arial, Helvetica, sans-serif; padding-bottom:20px; }
+.mid-content article.right { width:250px; float:right; padding-right:10px; }
+.mid-content article h4 { font:16px 'ProximaNovaBold', Arial, Helvetica, sans-serif; padding:1px 0 32px 0; }
+.mid-content article ul { width:100%; float:left; }
+.mid-content article ul li { width:100%; float:left; list-style:none; font:14px 'ProximaNovaBold', Arial, Helvetica, sans-serif; padding-bottom:24px; }
+.mid-content article ul li a { width:210px; float:left; padding-left:40px; color:#555555; }
+.mid-content article ul li a:hover { color:#f4bd02; }
+.mid-content article ul li a.icon01 { background:url(/i/v3/icon01.png) 0 0 no-repeat; height:24px; line-height:24px; }
+.mid-content article ul li a.icon01:hover { background-position:0 -24px; }
+.mid-content article ul li a.icon02 { background:url(/i/v3/icon02.png) 0 0 no-repeat; height:18px; line-height:18px; }
+.mid-content article ul li a.icon02:hover { background-position:0 -18px; }
+.mid-content article ul li a.icon03 { background:url(/i/v3/icon03.png) 0 0 no-repeat; height:18px; line-height:18px; }
+.mid-content article ul li a.icon03:hover { background-position:0 -18px; }
+.mid-content article ul li a.icon04 { background:url(/i/v3/icon04.png) 0 0 no-repeat; height:24px; line-height:24px; }
+.mid-content article ul li a.icon04:hover { background-position:0 -24px; }
+.mid-content article ul li a.icon05 { background:url(/i/v3/icon05.png) 0 0 no-repeat; height:25px; line-height:25px; }
+.mid-content article ul li a.icon05:hover { background-position:0 -25px; }
+.mid-content article ul li a.icon06 { background:url(/i/v3/icon06.png) 0 0 no-repeat; height:28px; line-height:28px; }
+.mid-content article ul li a.icon06:hover { background-position:0 -30px; }
+/*******************mid-content css ends here****************************/
+
+/*******************mid-content-outer-wrp css starts here****************************/
+.mid-content-outer-wrp { width:100%; float:left; background:url(/i/v3/mid_content_bg.gif) center repeat-y; }
+.mid-content-outer { width:100%; float:left; background:url(/i/v3/veiw_any_bg.gif) top center no-repeat; padding-top:31px; }
+.mid-content-outer .mid-content figure { padding-top:20px; }
+.mid-content-outer .mid-content article { padding-top:0; }
+.mid-content-outer .mid-content article h3 { padding-top:25px; }
+/*******************mid-content-outer-wrp css ends here****************************/
+
+/*******************bottom-section-outer css starts here****************************/
+.bottom-section-outer { width:100%; float:left; background:url(/i/v3/repeat_patter.gif) center repeat-y; }
+.bottom-section-outer .top-curve { width:100%; float:left; background:url(/i/v3/top_pattern.gif) top center no-repeat; }
+.bottom-section-outer .btm-curve { width:100%; float:left; background:url(/i/v3/btm_pattern.gif) bottom center no-repeat; }
+.bottom-section { width:1003px; float:left; padding:35px 0 25px 0; background:url(/i/v3/border.gif) center repeat-y; margin:1px 0px }
+.bottom-section .nums { width:195px; float:left; margin-right:80px; padding: 0 40px; text-align:center; text-transform: uppercase; }
+.bottom-section .nums p { font:12px 'ProximaNovaBold', Arial, Helvetica, sans-serif; color:#777777; }
+.bottom-section .nums .box { width:195px; height:126px; float:left; padding:20px 0; background:url(/i/v3/box.gif) 0 0 no-repeat; margin:5px 0; position:relative; }
+.bottom-section .nums .box strong { display:block; font:27px 'ProximaNova', Arial, Helvetica, sans-serif; margin-bottom:60px; color:#222222; text-shadow: 0px 1px white; font-weight: bold; }
+.bottom-section .nums .box strong.last { margin-bottom:0; }
+.bottom-section .nums .box span { position:absolute; top:64px; left:-36px; }
+.bottom-section .nums .box span em { font:14px/30px 'ProximaNova', Arial, Helvetica, sans-serif; text-transform: uppercase; color: white; float:left; background:url(/i/v3/number_tag.png) 0 0 no-repeat; width:267px; height:41px; font-style:normal; }
+.bottom-section .news { width:240px; float:left; padding:20px 0 0 0; margin-right:130px; }
+.bottom-section .news p { font:18px 'ProximaNova', Arial, Helvetica, sans-serif; font-style: italic; width:220px; float:left; background:url(/i/v3/quote-top.gif) 0 0 no-repeat; padding-left:35px; color:#777777; padding-right:40px }
+.bottom-section .news p span img { position:relative; top:3px; left:7px }
+.bottom-section .news figure { padding:20px 0 0 35px; width:215px; float:left; }
+.bottom-section .social_link { width:193px; float:left; padding:50px 0 0 0; position:relative; text-align:center; }
+.bottom-section .social_link ul { width:100%; float:left; list-style:none; }
+.bottom-section .social_link ul li { float:left; padding:0 16px 13px 0; }
+.bottom-section .social_link ul li img { float:left; }
+.bottom-section .social_link ul li.last { padding-right:0; }
+.bottom-section .social_link p { font:14px 'ProximaNova', Arial, Helvetica, sans-serif; }
+.bottom-section .social_link p a { color:#777777; }
+.bottom-section .social_link p a:hover { color:#000; display:inline-block; }
+.bottom-section .social_link span.integrate { position:absolute; top:0; left:-62px; }
+.bottom-section .social_link span.integrate em { font:14px/30px 'ProximaNova', Arial, Helvetica, sans-serif; text-transform: uppercase; color: white; background:url(/i/v3/integrate_tag.png) 0 0 no-repeat; width:302px; height:36px; float:left; }
+/*******************bottom-section-outer css ends here****************************/
+
+
+/*******************get started page css starts here****************************/
+#inner_layout { float:left; background:url(/i/v3/big_bg.jpg) no-repeat center 0; width:100%; min-height:1186px; height:auto !important; height:1186px; }
+#outer_layout.outer_shadow { background:url(/i/v3/shadow.png) center repeat-y; }
+#outer_container { width:551px; margin:0 auto; }
+.inner_container { float:left; height:50px; width:551px; margin-left:-21px; position:relative; display:inline }
+.inner_container header { float:left; width:100%; padding-top:41px; padding-bottom:33px; }
+.inner_container .logo { float:left; width:304px; padding-left:4px; }
+.inner_container .logo h1 { text-indent:-99999px; float:left; width:304px; height:40px; }
+.inner_container .logo h1 img { float:left }
+.inner_container .login_btn { float:right; position:relative; width:73px; margin-top:9px }
+.inner_container .login_btn a { background: url("/src/images/login_btn_01.png") no-repeat scroll 0 0 transparent; position:absolute; top:0; right:0; color: #2E2E2E; float: left; font: 12px/29px 'ProximaNovaBold', arial; height: 29px; text-align: center; text-transform: uppercase; width:73px; }
+.inner_container .login_btn a:hover { background-position:0 -30px; }
+.inner_container .content { float:left; width:100%; background:url(/i/v3/gray_bg.gif) repeat-y 0 0; text-align:center; padding-top:45px; }
+.inner_container .content header { padding:0 0 0 0; }
+.content header h3 { font:36px/36px 'ProximaNova', Arial, Helvetica, sans-serif; color:#000; font-weight: bold; }
+.content header p { font:18px/30px 'ProximaNova', Arial, Helvetica, sans-serif; color:#000; padding-top:7px; }
+.content .form_sec { float:left; width:100%; padding-top:14px; }
+.content .form_sec .row { float:left; width:100%; }
+.content .form_sec input.textbox {
+    width:242px;
+    height:25px;
+    margin: 10px 80px 0px 0px;
+    background:#fff;
+    font-family:'ProximaNova', Arial, Helvetica, sans-serif;
+    color:#1d1d1d;
+    border:1px solid #c5c5c5;
+    padding:0px 8px;
+    text-align:left;
+    font-size: 14px;
+
+}
+.content .form_sec .submit_btn { border:none; background: url("/i/v3/signup_btn.png") no-repeat 0 0; font:24px/50px 'ProximaNova', Arial, Helvetica, sans-serif; width:223px; text-align:center; color: #000000; cursor:pointer; height:50px; margin-top:40px; }
+.content .form_sec .submit_btn.submit_hover { background-position:0 -50px; }
+.content footer { padding:26px 0 64px 0 }
+.content footer a { color:#535353; font:12px 'ProximaNova', Arial, Helvetica, sans-serif; text-decoration:underline }
+.content footer a:hover { color:#478f8f }
+/*******************get started page css ends here****************************/
+
+/*******************login page css starts here****************************/
+.content .form_sec a { color:#535353; font:12px 'ProximaNova', Arial, Helvetica, sans-serif; text-decoration:underline }
+.content .form_sec a:hover { color:#478f8f }
+.content .form_sec .row.forgot { padding-top:14px; }
+.content .form_sec .submit_btn.login_01 { margin-top:10px; }
+/*******************login page css ends here****************************/
+
+/*******************howtoadd page css starts here****************************/
+#outer_layout.outer_bg { background:url(/i/v3/how_toadd_bg.gif) repeat 0 0 }
+.innerhow { float:left; width:100% }
+#main_container { float:left; width:100%; padding-bottom:34px }
+#main_container .logo_sec { float:left; width:auto; padding:36px 0 0 0 }
+#main_container .logo_sec h1 { text-indent:-99999px; float:left; width:208px; height:27px; padding:10px 23px 0 0 }
+#main_container .logo_sec h1 img { float:left }
+#main_container .logo_sec h2 { float:left; height:47px; padding:0 0 0 26px; font:30px/47px 'ProximaNovaBold', Arial, Helvetica, sans-serif; color:#fff; background:url(/i/v3/seperator.gif) no-repeat left 0; }
+#main_container .logo_sec h2 a { color:#fff; }
+#main_container .logo_sec h2 a:hover { color:#478f8f }
+#main_container .right_sec { float:right; padding:46px 0 0 0 }
+#main_container .right_sec .login_btn_01 { float:left; padding:0 17px 0 0; width:67px }
+#main_container .right_sec .login_btn_01 a { float:left; background:url(/i/v3/login_btn_02.png) no-repeat 0 0; width:67px; height:29px; color:#2e2e2e; text-align:center; font:12px/29px 'ProximaNovaBold', Arial, Helvetica, sans-serif; top:0; right:0; }
+#main_container .right_sec .login_btn_01 a:hover { background-position:0 -30px }
+#main_container .right_sec .signup_01 { float:left; width:70px }
+#main_container .right_sec .signup_01 a { float:left; background:url(/i/v3/signup_btn_01.png) no-repeat 0 0; width:70px; height:27px; top:0; right:0; text-align:center; color:#2e2e2e; font:12px/28px 'ProximaNovaBold', Arial, Helvetica, sans-serif; margin-top:1px ; display:inline; }
+#main_container .right_sec .signup_01 a:hover { background-position:0 -29px }
+#main_container .save_from_browser { float:left; width:100%; padding:30px 0 0 0 }
+#main_container .save_from_browser:first-child { padding:27px 0 0 }
+#main_container header h4 { font:18px/36px 'ProximaNovaBold', Arial, Helvetica, sans-serif; color:#000; text-transform:uppercase; padding:0 0 10px 0 }
+/*******************white_box page css starts here****************************/
+.white_box { float:left; width:1001px; min-height:265px; height:auto !important; height:265px; background:#fff; border:1px solid #cacaca; border-top-width:2px }
+.white_box.content { float:left; padding:29px 55px 0 80px; width:863px; min-height:230px; height:auto !important; height:230px; }
+.white_box.content_left{ float:left !important; width:314px !important; padding:29px 93px 7px 88px;}
+.white_box.content_right{ float:right !important; width:314px !important; padding:29px 93px 5px 88px;}
+.white_box.content_left .left{width:314px !important; }
+.white_box.content_right .left{  width:314px !important; }
+.white_box.content_right .left span{ padding-bottom:15px !important;}
+.white_box.content_right .left span.image { display:block; padding: 0 0 5px !important }
+.white_box.content_right .left a.install { width:116px; height:26px; display:inline-block; background:url(/i/v3/btn_install.gif) no-repeat 0 0; margin-bottom:0px; }
+.white_box.content_right .left a.install:hover { background-position:0 bottom }
+.white_box.content .left { float:left; width:363px; text-align:center; }
+.white_box.content .left h5 { font:21px 'ProximaNovaBold', Arial, Helvetica, sans-serif; color:#555555; padding-bottom:10px; }
+.white_box.content .left span { font:14px 'Conv_HelveticaNeueLTStd-Roman', Arial, Helvetica, sans-serif; color:#555555; display:inline-block; padding-bottom:28px; line-height:20px }
+.white_box.content .left a { background:url(/i/v3/read_it_later_btn.png) no-repeat 0 0; width:189px; height:54px; top:0; right:0; display:inline-block; font:20px/54px 'ProximaNovaBold', Arial, Helvetica, sans-serif; color:#2e2e2e; margin-bottom:24px; }
+.white_box.content .left a:hover { background-position:0 bottom }
+.white_box.content .left a strong { font:ProximaNovaBold, Arial, Helvetica, sans-serif; position:relative; top:4px }
+.white_box.content .right { float:right; width:492px; text-align:center; padding-top:5px }
+.white_box.content .right img { float:left }
+.white_box.content .right span { font:14px 'Conv_HelveticaNeueLTStd-Roman', Arial, Helvetica, sans-serif; color:#555555; padding-bottom:15px; display:inline-block }
+/*******************white_box page css ends here****************************/
+
+/*******************main_boxes page css starts here****************************/
+.main_boxes { float:left; width:100% }
+.main_boxes .content { float:left; width:238px; border:1px solid #d3d3d3; background:#fff; text-align:center; padding:22px 0 9px; margin-right:12px; min-height:251px; height:auto !important; height:251px; border-top-width:2px }
+.main_boxes .content h3 { display:block; font-size:21px; color:#555; font-family:'ProximaNovaBold', Arial, Helvetica, sans-serif; }
+.main_boxes .content span.image { display:block; padding: 20px 0 13px }
+.main_boxes .content .get_app { width:116px; height:26px; display:inline-block; background:url(/i/v3/get_app_btn.gif) no-repeat 0 0 }
+.main_boxes .content .get_app:hover { background-position:0 bottom }
+.main_boxes .content.last h3 { font-size:16px; margin-top: 51px; padding-left:55px; text-align:left; }
+.main_boxes .content.last { margin-right:0; padding-top: 0; height: 273px !important; }
+.main_boxes .content.last ul { float:left; padding:22px 0 30px; list-style:none; }
+.main_boxes .content.last ul li { font:14px 'ProximaNova', Arial, Helvetica, sans-serif; color:#555; padding: 0 0 13px 57px; float:left; width:150px; }
+.main_boxes .content.last ul li a { color:#555; background:url(/i/v3/arrow02.gif) no-repeat right 4px; padding-right:17px; float:left; }
+.main_boxes .content.last ul li a:hover { color:#f4bd02; background:url(/i/v3/arrow_02_active.gif) no-repeat right 4px; }
+/*******************main_boxes page css ends here****************************/
+
+
+
+#main_container .save_from_browser.view { padding:27px 0 0 }
+
+/*******************small_boxes page css starts here****************************/
+.small_boxes { float:left; width:100% }
+.small_boxes .content { float:left; width:490px; border:1px solid #d3d3d3; background:#fff; text-align:center; padding:22px 0 7px; min-height:236px; height:auto !important; height:236px; border-top-width:2px }
+.small_boxes .content h3 { display:block; font-size:21px; color:#555; font-family:'ProximaNovaBold', Arial, Helvetica, sans-serif; }
+.small_boxes .content small { display:block; font:14px 'Conv_HelveticaNeueLTStd-Roman', Arial, Helvetica, sans-serif; color:#555555; padding:10px 0 0 0 }
+.small_boxes .content small a { color:#555555; }
+.small_boxes .content small a:hover { color:#f4bd02 }
+.small_boxes .content span.image { display:block; padding:20px 0 10px 0 }
+.small_boxes .content.last { float:right }
+/*******************small_boxes page css ends here****************************/
+
+/*******************main_sec page css starts here****************************/
+.main_sec .social_links { width:207px; padding:0 0 0 84px; float:left }
+.main_sec .social_links ul { float:left; width:100%; }
+.main_sec .social_links ul li { padding-right:15px; float:left; padding-bottom:10px; }
+.save_address { width:116px; height:26px; display:inline-block; background:url(/i/v3/save_address_btn.gif) no-repeat 0 0 }
+.save_address:hover { background-position:0 bottom }
+.main_sec { float:left; padding:36px 0 14px; width:100% }
+.main_sec ul.right_links { float:right; width:183px; padding:18px 0 0 }
+.main_sec ul.right_links li { float:left; width:100%; font-size:14px; font-family:'ProximaNovaBold', Arial, Helvetica, sans-serif; padding-bottom:13px }
+.main_sec ul.right_links li a { color:#555; padding-right:17px; float:left; background:url(/i/v3/arrow02.gif) no-repeat right 4px }
+.main_sec ul.right_links li a:hover { color:#f4bd02; background:url(/i/v3/arrow_02_active.gif) no-repeat right 4px }
+/*******************main_sec page css ends here****************************/
+/*******************howtoadd page css ends here****************************/
+
+/*******************emailitems page css starts here****************************/
+.content .email_sec { float:left; width:100%; padding-top:0; }
+.content .email_sec .img_01 { float:left; width:100%; padding:31px 0 0 0 }
+.form_sec .submit_btn.address_buk { background:url(/i/v3/address_buk_btn.png) no-repeat 0 0; width:338px; height:50px; }
+.form_sec .submit_btn.address_buk:hover { background-position:0 bottom }
+.content .email_sec .text { float:left; width:430px; padding:33px 0 0 57px; text-align:left }
+.content .email_sec p { font:24px Arial, 'Helvetica', sans-serif; color:#383838; }
+.content .email_sec p a { font:24px Arial, 'Helvetica', sans-serif; color:#383838; text-decoration:none }
+.content .bottom_btns { float:left; width:100%; padding:62px 0 20px 0 }
+.content .bottom_btns .left_btn { float:left; padding-left:56px; }
+.content .bottom_btns .right_btn { float:right; padding-right:60px; }
+.content .bottom_btns .left_btn a { float:left; background:url(/i/v3/left_btn.png) no-repeat 0 0; width:19px; height:30px }
+.content .bottom_btns .right_btn a { float:left; background:url(/i/v3/right_btn.png) no-repeat 0 0; width:19px; height:30px }
+.content .bottom_btns .left_btn a:hover { background-position:0 bottom }
+.content .bottom_btns .right_btn a:hover { background-position:0 bottom }
+.content .bottom_btns ul.bottom_dots { display:block; padding:3px 0 0 0 }
+.content .bottom_btns ul.bottom_dots li { display:inline-block; padding-left:18px; }
+.content .bottom_btns ul.bottom_dots li a { display:block; background:url(/i/v3/bottom_btn.png) no-repeat 0 0; width:14px; height:15px; }
+.content .bottom_btns ul.bottom_dots li.active a { background:url(/i/v3/bottom_btn_active.png) no-repeat 0 0 }
+.content .panel { float:left; width:551px; }
+/*******************emailitems page css ends here****************************/
+.pad05 { padding: 26px 0 62px !important; }
+
+.signup_row{ width:777px; float:left; background:url(/i/v3/divider.gif) no-repeat center top; padding:50px 0 60px 235px; }
+.signup_row p{ font:15px/38px 'ProximaNova', Arial, Helvetica, sans-serif; color:#555; float:left; padding:0 15px;}
+.signup_row a{ float:left; background:url(/i/v3/btn_signup.gif) no-repeat 0 0; height:40px; width:175px; font:bold 19px/40px 'ProximaNova', Arial, Helvetica, sans-serif; color:#000; text-align:center}
+.signup_row a:hover{ background-position:0 -40px;}
+
+.fieldlabel {
+    display: inline-block;
+    width: 75px;
+    padding-right:8px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: ProximaNova, Arial;
+}
+
+.row input[disabled]
+{
+    background: rgba(245,245,245,0.8) !important;
+}
+
+.create_accnt
+{
+    padding: 30px 0px 35px 0px !important;
+    font-size: 12px;
+    font-family: ProximaNova, Arial;
+}
+
+.row .field_msg
+{
+    visibility: hidden;
+    display: block;
+    min-height: 15px;
+    max-height: 15px;
+    line-height: 15px;
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 150px;
+    font-size: 11px;
+}
+.row.hasError .field_msg
+{
+    visibility: visible;
+    max-height: none;
+    color: #c10000;
+}
+.row.checking .field_msg
+{
+    visibility: visible;
+    max-height: none;
+    background: url('/i/signup_spinner.gif') transparent left center no-repeat;
+    padding-left: 20px;
+}
+.row.hasError .fieldlabel
+{
+    color: #c10000;
+}
+.row.hasError input
+{
+    border: 1px solid #c82929 !important;
+}
+
+.row.hasError
+{
+    background: url('/i/form_error.png') transparent no-repeat;
+    background-position: 416px 17px;
+}
+.row.verified
+{
+    background: url('/i/form_success.png') transparent no-repeat;
+    background-position: 416px 17px;
+}
+
+/* Add Page */
+
+
+.desktop_apps .content{
+    min-height: 280px;
+}
+
+.desktop_apps .save_article a.install{
+    width: 116px;
+    height: 26px;
+    display: inline-block;
+    background: url(/i/v3/btn_install.gif) no-repeat 0 0;
+    margin-bottom: 0px;
+    margin-top: 23px;
+}
+
+.desktop_apps .save_article .extension span{
+    display: block;
+    padding: 0 0 5px !important;
+}
+
+.desktop_apps .save_article .extension span.image {
+    display: block;
+    padding: 0 0 5px !important;
+}
+
+.desktop_apps .save_article  .bookmarklet{
+    display: block;
+}
+
+.desktop_apps .save_article.show_extension  .bookmarklet{
+    display: none;
+}
+
+.desktop_apps .save_article  .extension{
+    display: none;
+}
+
+.desktop_apps .save_article.show_extension  .extension{
+    display: block;
+}
+
+.desktop_apps .mac_app h3{
+    display: block;
+    font-size: 21px;
+    color: #555;
+    font-family: 'ProximaNovaBold', Arial, Helvetica, sans-serif;
+}
+
+.desktop_apps .mac_app{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.desktop_apps .mac_app  span.image{
+    display: block;
+    padding: 20px 0 13px;
+}
+
+.desktop_apps .mac_app .get_app{
+    width: 116px;
+    height: 26px;
+    display: inline-block;
+    background: url(/i/v3/get_app_btn.gif) no-repeat 0 0;
+}
+
+.desktop_apps .mac_app .get_app:hover{
+    background-position: 0 bottom;
+}
+
+.desktop_apps .content .left a.toggle_extension{
+    background: none;
+    color: #838383;
+    font-family: ProximaNova, Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    margin-bottom: 0px;
+}
+
+.desktop_apps .content .bookmarklet .subline{
+    padding-bottom: 0px;
+    margin-bottom: -2px;
+}
+
+.desktop_apps .content a.toggle_extension{
+    height: 50px;
+}
+
+.desktop_apps .content .extension a.toggle_extension{
+    margin-top: 4px;
+}
+
+.desktop_apps .content .left a.toggle_extension:hover{
+    text-decoration: underline;
+}
+
+.desktop_apps .save_article .bookmarklet a.let{
+    margin-top: 20px;
+    margin-bottom: 48px;
+}

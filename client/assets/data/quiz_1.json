@@ -1,0 +1,64 @@
+{
+    "uid" : 1,
+    "name": "Wanna be a Front-end Engineer @ Desk?",
+
+    "questions" : [
+        {
+            "question" : "Which is not an advantage of using a closure?",
+            "choices"  : [
+                "Prevent pollution of global scope",
+                "Encapsulation",
+                "Private properties and methods",
+                "Allow conditional use of ‘strict mode"
+            ],
+            "answer"   : "2"
+        },
+        {
+            "question" : "To create a columned list of two-line email subjects and dates for a master-detail view,which are the most semantically correct?",
+            "choices"  : [
+                "<div>+<span>",
+                "<tr>+<td>",
+                "<ul>+<li>",
+                "<p>+<br>",
+                "none of these",
+                "all of these"
+            ],
+            "answer"   : "2"
+        },
+        {
+            "question" : "To pass an array of strings to a function, you should not use...",
+            "choices"  : [
+                "fn.apply(this, stringsArray)",
+                "fn.call(this, stringsArray)",
+                "fn.bind(this, stringsArray)"
+            ],
+            "answer"   : "2"
+        },
+        {
+            "question" : "____ and ____ would be the HTML tags you would use to display a menu item and its description.",
+            "choices"  : [
+                "<li> + <a>",
+                "<div> + <span>",
+                "<menu> + <menuItem>"
+            ],
+            "answer"   : "0"
+        },
+        {
+            "question" : "Given <div id='outer'><div class='inner'></div></div>, which of these two is the most performant way to select the inner div ?",
+            "choices"  : [
+                "getElementById('outer').children[0]",
+                "getElementsByClassName('inner')[0]"
+            ],
+            "answer"   : "0"
+        },
+        {
+            "question" : "Given this:\r angular.module( 'myModule', [ ] )\r       .service( 'myService', (function() {\r          var message = 'Message one!',\r              getMessage = function() \r              {\r                  return this.message;\r              };\r              \r          this.message = 'Message two!';\r          this.getMessage = function() { \r            return message; \r          };\r          \r          return function() {\r            return {\r                      getMessage  : getMessage,\r                      message     : 'Message three!'\r                   };\r          };\r          \r        })())\r\r Which message will be returned by injecting this service and executing 'myService.getMessage()'? ",
+            "choices"  : [
+                "Message one!",
+                "Message two!",
+                "Message three!"
+            ],
+            "answer"   : "2"
+        }
+    ]
+}

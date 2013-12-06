@@ -1,0 +1,19 @@
+<div >
+
+    Quiz Area
+
+    <p>
+        {{ challenge.index }}. {{ challenge.question }}
+    </p>
+
+    <div ng-repeat="choice in challenge.choices">
+        <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}"> {{ choice }}
+    </div>
+
+    <br/>
+    <button ng-click="next()">{{ btnTitle }}</button>
+
+</div>
+
+
+
