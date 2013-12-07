@@ -43,13 +43,16 @@
 
                         $log.debug( "nextQuestion( )" );
 
+                        // Fail if the user did NOT select an answer ?
+
                         if ( $scope.challenge && ($scope.challenge.selected === undefined) )
                         {
                             $log.warn( ANSWER_NEEDED );
                             $window.alert( ANSWER_NEEDED );
-
                             return;
                         }
+
+                        // Lookup the next question to build and navigate to the URL
 
                         question = quiz.nextQuestion();
                         url      = supplant( VIEW_QUESTION, question );
@@ -65,23 +68,24 @@
                     {
                         $log.debug( "submitTest()" );
 
-                        $log.tryCatch( function() {
-                            quizDelegate
-                                .submitQuiz( quiz )
-                                .then( function( score )
-                                {
-                                   // Cache score information for use by ScoreController
-                                   // Navigate to `Score Results` view
+                        $log.tryCatch( function()
+                        {
+                            return quizDelegate
+                                    .submitQuiz( quiz )
+                                    .then( function( score )
+                                    {
+                                       // Cache score information for use by ScoreController
+                                       // Navigate to `Score Results` view
 
-                                   $log.debug( supplant("onResult_submitTest( Test Score = {grade} )", [score] ));
+                                       $log.debug( supplant("onResult_submitTest( Test Score = {grade} )", [score] ));
 
-                                   session.score = score;
-                                   session.quiz  = null;
+                                       session.score = score;
+                                       session.quiz  = null;
 
-                                   $log.debug( "Navigating to the '/scoring' view..." );
-                                   $location.path( VIEW_SCORING );
+                                       $log.debug( "Navigating to the '/scoring' view..." );
+                                       $location.path( VIEW_SCORING );
 
-                                });
+                                    });
                         });
 
                     },
@@ -92,26 +96,29 @@
                     {
                         $log.debug( supplant( "loadQuiz( quiz ID = {0} )", [ quizID ] ));
 
-                        $log.tryCatch( function() {
+                        $log.tryCatch( function()
+                        {
+                            // Load the quiz and save to the session cache
+                            // NOTE: do not publish the entire `quiz` to scope... to much visibility
 
-                            quizDelegate
-                                .loadQuiz( quizID )
-                                .then( function( instance )
-                                {
-                                    $log.debug( supplant( "onResult_loadQuiz( quizID = {0} )", [ instance.uid ] ));
+                            return quizDelegate
+                                    .loadQuiz( quizID )
+                                    .then( function( instance )
+                                    {
+                                        $log.debug( supplant( "onResult_loadQuiz( quizID = {0} )", [ instance.uid ] ));
 
-                                    // Save the quiz to the session cache
-                                    session.quiz    = quiz = instance;
-                                    $scope.quizName = quiz.name;
+                                        // Save the quiz to the session cache
+                                        session.quiz    = quiz = instance;
+                                        $scope.quizName = quiz.name;
 
-                                    nextQuestion();
-                                });
+                                        nextQuestion();
+                                    });
                         });
                     },
 
                     /**
                      * Do we already have the question loaded `into` the view ?
-                     * @param questionID
+                     * @param qIndex Integer index of the question if the questions list
                      * @returns {*|boolean}
                      */
                     questionAlreadyLoaded = function( qIndex )
@@ -127,10 +134,14 @@
                     {
                         var question = null;
 
-                        qIndex = qIndex || $routeParams.question;
+                        // Use specified index or default to 1st question
+
+                        qIndex = qIndex || $routeParams.question || 1;
 
                         $scope.next      = nextQuestion;
                         $scope.btnTitle  = "Continue";
+
+                        // If we can lookup a question in the quiz, find that question and publish to $scope ?
 
                         if ( quiz && angular.isDefined( qIndex ) && !questionAlreadyLoaded( qIndex ) )
                         {

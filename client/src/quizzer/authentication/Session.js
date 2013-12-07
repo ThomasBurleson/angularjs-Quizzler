@@ -28,9 +28,10 @@
                 _session.account.email          = '';
                 _session.sessionID              = null;
 
+                // TODO - refactor since these are specific to the `quiz` module
+
                 _session.quiz                   = undefined;
                 _session.score                  = undefined;
-
                 _session.selectedQuiz           = 1;
 
                 return _session;

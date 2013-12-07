@@ -21,17 +21,16 @@
         'auth/LoginController'
     ];
 
-    /**
-     */
     define( dependencies, function ( Session, Authenticator, SessionController, LoginController )
     {
         var moduleName = "quizzer.Authenticate";
 
-        angular.module( moduleName, [ ] )
-            .factory( "session",                Session )
-            .service( "authenticator",          Authenticator )
-            .controller( "SessionController",   SessionController )
-            .controller( "LoginController",     LoginController );
+        angular
+            .module(     moduleName,    [ ]                     )
+            .service(    "session",           Session           )
+            .service(    "authenticator",     Authenticator     )
+            .controller( "SessionController", SessionController )
+            .controller( "LoginController",   LoginController   );
 
         return moduleName;
     });

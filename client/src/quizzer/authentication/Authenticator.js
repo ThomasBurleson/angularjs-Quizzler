@@ -22,20 +22,25 @@
 
     define( dependencies, function ( supplant, createGuid, md5 )
     {
-        var Authenticator = function ( session, $http, $q, $log )
+        var Authenticator = function ( $http, $q, $log )
             {
                $log = $log.getInstance( "Authenticator" );
-
-                var user = session.user,
 
                     /**
                      * Util function to build a resolved promise
                      * @returns {promise|*|promise}
                      */
-                    makeResolved = function( response )
+                var makeResolved = function( response )
                     {
                         var dfd = $q.defer();
                             dfd.resolve( response );
+
+                        return dfd.promise;
+                    },
+                    makeRejected = function( fault )
+                    {
+                        var dfd = $q.defer();
+                        dfd.reject( fault );
 
                         return dfd.promise;
                     },
@@ -52,13 +57,11 @@
                          );
 
                          // Normally we have remote REST services...
-                         // return $http.post( URL.LOGIN, { userName : userName, password : md5.encrypt(password) } );
+                         // return $http.post( URL.LOGIN, { email : email, password : md5.encrypt(password) } );
 
-
-                         return makeResolved({
-                             session : createGuid(),
-                             email   : email
-                         });
+                         return ( email === "" ) ?
+                                makeRejected( "A valid email is required!" ) :
+                                makeResolved({ session : createGuid(), email : email });
                     },
 
                     /**
@@ -81,37 +84,38 @@
                      * Change user password
                      * @return Promise
                      */
-                    changePassword = function( newPassword )
+                    changePassword = function( email, newPassword, password )
                     {
-                        user.newPassword = newPassword;
 
-                        $log.debug( "changePassword ( userName={userName}, newPassword={newPassword}", session );
+                        $log.debug( "changePassword ( email={0}, newPassword={1}", [email,  newPasword]);
 
                         //  return $http.post( URL.PASSWORD_CHANGE, {
-                        //      userName    : user.userName,
-                        //      oldPassword : md5.encrypt(user.password),
-                        //      newPassword : md5.encrypt(user.newPassword)
+                        //      userName    : email,
+                        //      oldPassword : md5.encrypt(password ),
+                        //      newPassword : md5.encrypt(newPassword)
                         //  });
 
-                        return makeResolved( true );
+                        return makeResolved( {
+                            email    : email,
+                            password : newPassword
+                        });
                     },
 
                      /**
                       * Reset user password
                       * @return Promise
                       */
-                     resetPassword = function( password, hint )
+                     resetPassword = function( email, password, hint )
                      {
                          $log.debug( "resetPassword( password={0}, hint={1}", [password, hint] );
 
                         // return $http.post( URL.PASSWORD_RESET, {
-                        //     userName     : user.userName,
-                        //     email        : user.email,
+                        //     userName     : email,
                         //     newPassword  : md5.encrypt(password),
                         //     passwordHint : md5.encrypt(hint)
                         // });
 
-                        return makeResolved( true );
+                        return changePassword( email,  password );
                      };
 
 
@@ -128,7 +132,8 @@
 
             };
 
-        return [ "session", "$http", "$q", "$log", Authenticator ];
+        return [ "$http", "$q", "$log", Authenticator ];
+
     });
 
 }( define ));
