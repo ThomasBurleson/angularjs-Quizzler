@@ -25,13 +25,13 @@
 
         require.config (
         {
-        	appDir  : '',
-        	baseUrl : '/src',
+            appDir  : '',
+            baseUrl : '/src',
             priority: 'angular',
-        	paths   :
-        	{
+            paths   :
+            {
                 'text'         : '../vendor/_custom/require/text',
-        		'angular'      : '../vendor/angular/angular',
+                'angular'      : '../vendor/angular/angular',
                 'ngRoute'      : '../vendor/angular-route/angular-route',
                 'ngSanitize'   : '../vendor/angular-sanitize/angular-sanitize',
 
@@ -39,19 +39,19 @@
                 'quiz'         : './quizzer/quiz',
                 'utils'        : './mindspace/utils'
 
-        	},
-        	shim    :
-        	{
-        		'angular':
-        		{
-        			exports : 'angular',
-        			deps    : [  ]
-        		},
-        		'underscore':
-        		{
-        			exports : '_'
-        		}
-        	}
+            },
+            shim    :
+            {
+                'angular':
+                {
+                    exports : 'angular',
+                    deps    : [  ]
+                },
+                'underscore':
+                {
+                    exports : '_'
+                }
+            }
         });
 
 
@@ -65,6 +65,7 @@
                 'utils/logger/ExternalLogger',
                 'utils/logger/LogDecorator',
                 'auth/AuthenticateModule',
+                'quiz/RouteManager',
                 'quiz/QuizModule'
             ],
 
@@ -75,34 +76,10 @@
          * which uses RequireJS to load  packages and code
          *
          */
-        require( dependencies, function ( $log, LogDecorator, AuthenticateModule, QuizModule )
+        require( dependencies, function ( $log, LogDecorator, AuthenticateModule, RouteManager, QuizModule )
         {
-            var RouteManager = ["$routeProvider", function ( $routeProvider )
-                {
-                    $log.debug( "Configuring $routeProvider...");
-
-                    $routeProvider
-                        .when( '/login', {
-                            templateUrl : "/assets/views/login.tpl.html",
-                            controller  : "LoginController"
-                        })
-                        .when( '/quiz/:question?', {
-                            templateUrl : "/assets/views/quiz.tpl.html",
-                            controller  : "TestController"
-                        })
-                        .when( '/scoring', {
-                            templateUrl : "/assets/views/score.tpl.html",
-                            controller  : "ScoreController"
-                        })
-                        .otherwise({
-                            redirectTo  : '/login'
-                        });
-
-                }];
-
             $log = $log.getInstance( "BOOTSTRAP" );
             $log.debug( "Initializing {0}", [ appName ] );
-
 
             /**
              * Start the main application
@@ -113,8 +90,8 @@
 
             angular
                 .module( appName,  [ "ngRoute", "ngSanitize", AuthenticateModule, QuizModule ] )
-                .config( LogDecorator )
-                .config( RouteManager   );
+                .config( LogDecorator  )
+                .config( RouteManager  );
 
             angular.bootstrap( document.getElementsByTagName("body")[0], [ appName ]);
 

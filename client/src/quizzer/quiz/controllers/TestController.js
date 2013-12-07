@@ -55,7 +55,6 @@
                         url      = supplant( VIEW_QUESTION, question );
 
                         $log.debug( "Navigating to the '{0}' view...", [ url ] );
-
                         $location.path( url );
 
                     },
