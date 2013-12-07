@@ -1,17 +1,28 @@
 <div >
 
-    Quiz Area
+    <h1>{{ quizName }}</h1>
 
-    <p>
-        {{ challenge.index }}. {{ challenge.question }}
-    </p>
+    <div class="challenge">
 
-    <div ng-repeat="choice in challenge.choices">
-        <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}"> {{ choice }}
+        <p>
+            {{ challenge.index }}. {{ challenge.question }}
+        </p>
+
+        <div ng-bind-html="challenge.details" class="details"></div>
+
+        <div class="content">
+
+            <div ng-repeat="choice in challenge.choices" class="choices">
+                <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}"> {{ choice }}
+            </div>
+
+            <br/>
+            <button ng-click="next()">{{ btnTitle }}</button>
+
+        </div>
+
     </div>
 
-    <br/>
-    <button ng-click="next()">{{ btnTitle }}</button>
 
 </div>
 

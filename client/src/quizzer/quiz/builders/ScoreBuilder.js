@@ -150,6 +150,7 @@
 
                                         index    : j + 1,
                                         title    : question["question"],
+                                        details  : question["details"],
                                         correct  : isCorrect,
                                         answered : isCorrect ? null : supplant( "{0}.{1}", [ labelAt(given[j]), choiceAt( given[j] ) ] ),
                                         expected : supplant( "{0}.{1}", [ labelAt(expected[j]), choiceAt( expected[j] ) ] )

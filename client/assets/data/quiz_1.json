@@ -52,7 +52,8 @@
             "answer"   : "0"
         },
         {
-            "question" : "Given this:\r angular.module( 'myModule', [ ] )\r       .service( 'myService', (function() {\r          var message = 'Message one!',\r              getMessage = function() \r              {\r                  return this.message;\r              };\r              \r          this.message = 'Message two!';\r          this.getMessage = function() { \r            return message; \r          };\r          \r          return function() {\r            return {\r                      getMessage  : getMessage,\r                      message     : 'Message three!'\r                   };\r          };\r          \r        })())\r\r Which message will be returned by injecting this service and executing 'myService.getMessage()'? ",
+            "question" : "Given this:",
+            "details"  : "<img src='/assets/data/images/q1_1.jpg' /><p>Which message will be returned by injecting this service and executing 'myService.getMessage()'?</p>",
             "choices"  : [
                 "Message one!",
                 "Message two!",

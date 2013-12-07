@@ -1,6 +1,7 @@
-<div id="score">
+<div id="summary">
 
     <h1>Quiz: '{{ title }}'</h1>
+
 
     <h3>
         Your quiz score is {{ grade }}%
@@ -9,11 +10,13 @@
     <br/>
     <br/>
 
-    <div ng-repeat="score in scores">
+    <div ng-repeat="score in scores" class="score">
 
         <h4>
             {{ score.index }}. {{ score.title }}
         </h4>
+
+        <div ng-bind-html="score.details" class="details"></div>
 
         <div ng-if="score.correct" class="correct">
 
@@ -37,5 +40,6 @@
 
     </div>
 
+    <button ng-click="logout()">Logout</button>
 
 </div>

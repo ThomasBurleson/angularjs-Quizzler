@@ -15,9 +15,9 @@
     "use strict";
 
     var dependencies = [
-        'quiz/QuizDelegate',
-        'quiz/TestController',
-        'quiz/ScoreController'
+        'quiz/delegates/QuizDelegate',
+        'quiz/controllers/TestController',
+        'quiz/controllers/ScoreController'
     ];
 
     /**

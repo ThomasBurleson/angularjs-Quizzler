@@ -13,8 +13,8 @@
 	"use strict";
 
 	var dependencies = [
-		"mindspace/utils/logger/LogEnhancer",
-		"mindspace/utils/BrowserDetect"
+		"utils/logger/LogEnhancer",
+		"utils/BrowserDetect"
 	];
 
 	define(dependencies, function (LogEnhancer, BrowserDetect)

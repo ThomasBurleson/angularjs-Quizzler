@@ -14,7 +14,7 @@
 {
 	"use strict";
 
-	var dependencies = ['mindspace/utils/logger/LogEnhancer'];
+	var dependencies = ['utils/logger/LogEnhancer'];
 
 	/**
 	 * Register the class with RequireJS.

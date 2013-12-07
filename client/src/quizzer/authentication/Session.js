@@ -28,6 +28,9 @@
                 _session.account.email          = '';
                 _session.sessionID              = null;
 
+                _session.quiz                   = undefined;
+                _session.score                  = undefined;
+
                 _session.selectedQuiz           = 1;
 
                 return _session;
@@ -41,6 +44,7 @@
 
                 sessionID         : null,
                 clear             : onClear,
+                logout            : onClear,
 
                 selectedQuiz      : 1
             };

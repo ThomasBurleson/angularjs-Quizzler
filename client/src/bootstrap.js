@@ -12,11 +12,13 @@
 
       // Pre-load these for splash-screen progress bar...
 
-      { angular    : "../vendor/angular/angular.js",             size: "551057"  },
-      { ngRoute    : "../vendor/angular-route/angular-route.js", size: "30052"   },
-      { require    : "../vendor/requirejs/require.js",           size: "80196"   },
-      { underscore : "../vendor/underscore/underscore.js",       size: "43568"   }
+      { angular    : "../vendor/angular/angular.js",                    size: "551057"  },
+      { ngRoute    : "../vendor/angular-route/angular-route.js",        size: "30052"   },
 
+      { ngSanitize : "../vendor/angular-sanitize/angular-sanitize.js",  size: "19990"   },
+
+      { require    : "../vendor/requirejs/require.js",                  size: "80196"   },
+      { underscore : "../vendor/underscore/underscore.js",              size: "43568"   }
 
     )
     .ready("ALL", function() {
@@ -31,6 +33,7 @@
                 'text'         : '../vendor/_custom/require/text',
         		'angular'      : '../vendor/angular/angular',
                 'ngRoute'      : '../vendor/angular-route/angular-route',
+                'ngSanitize'   : '../vendor/angular-sanitize/angular-sanitize',
 
                 'auth'         : './quizzer/authentication',
                 'quiz'         : './quizzer/quiz',
@@ -59,6 +62,7 @@
          * @type {Array}
          */
         var dependencies = [
+                'utils/logger/ExternalLogger',
                 'utils/logger/LogDecorator',
                 'auth/AuthenticateModule',
                 'quiz/QuizModule'
@@ -71,29 +75,18 @@
          * which uses RequireJS to load  packages and code
          *
          */
-        require( dependencies, function ( LogDecorator, AuthenticateModule, QuizModule )
+        require( dependencies, function ( $log, LogDecorator, AuthenticateModule, QuizModule )
         {
-            /**
-             * Start the main application
-             *
-             * We manually start this bootstrap process; since ng:app is gone
-             * ( necessary to allow Loader splash pre-AngularJS activity to finish properly )
-             */
-
-            angular
-                .module( appName,  [ "ngRoute", AuthenticateModule, QuizModule ] )
-                .config( LogDecorator )
-                .config( function ( $routeProvider, $logProvider )
+            var RouteManager = ["$routeProvider", function ( $routeProvider )
                 {
-                    var $log       = $logProvider.$get().getInstance( appName);
-                        $log.debug( "Configuring $routeProvider...");
+                    $log.debug( "Configuring $routeProvider...");
 
                     $routeProvider
                         .when( '/login', {
                             templateUrl : "/assets/views/login.tpl.html",
                             controller  : "LoginController"
                         })
-                        .when( '/quiz', {
+                        .when( '/quiz/:question?', {
                             templateUrl : "/assets/views/quiz.tpl.html",
                             controller  : "TestController"
                         })
@@ -105,7 +98,23 @@
                             redirectTo  : '/login'
                         });
 
-                })
+                }];
+
+            $log = $log.getInstance( "BOOTSTRAP" );
+            $log.debug( "Initializing {0}", [ appName ] );
+
+
+            /**
+             * Start the main application
+             *
+             * We manually start this bootstrap process; since ng:app is gone
+             * ( necessary to allow Loader splash pre-AngularJS activity to finish properly )
+             */
+
+            angular
+                .module( appName,  [ "ngRoute", "ngSanitize", AuthenticateModule, QuizModule ] )
+                .config( LogDecorator )
+                .config( RouteManager   );
 
             angular.bootstrap( document.getElementsByTagName("body")[0], [ appName ]);
 
