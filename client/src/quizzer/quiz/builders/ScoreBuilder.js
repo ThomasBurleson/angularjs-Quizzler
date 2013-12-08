@@ -81,10 +81,9 @@
                             {
                                 var j,
                                     total    = 0,
+                                    count    = answers.expected.length,
                                     expected = answers.expected,
-                                    given    = answers.given,
-                                    count    = expected.length,
-                                    increment = Math.ceil( 100/Math.max( count, 1 ));
+                                    given    = answers.given;
 
                                 $log.debug( "calculateTotal()" );
 
@@ -95,12 +94,12 @@
                                         break;
                                     }
                                     if ( expected[j] == given[j] ) {
-                                        total += increment;
+                                        total += 1;
                                     }
                                 }
 
                                 // Make sure that total score is not > 100%
-                                return Math.min( 100, total );
+                                return Math.min( 100, Math.ceil( (total/count)*100 ));
                             },
 
                             /**
