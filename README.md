@@ -63,7 +63,7 @@ Additionally the developer should:
 
 ### Implementation
 
-Using AngularJS (v1.2.3) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstraping.
+Using AngularJS (v1.2.3) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstrapping.
 HeadJS is used to asynchronously load the required scripts **before** bootstrapping the NG application.
 
 Quizzler supports 1…n quizes defined in JSON format. The quiz data is dynamically loaded and the dynamic workflow will guide the tester thru 1..n questions. Quiz questions can contain HTML with references to external images, etc.
