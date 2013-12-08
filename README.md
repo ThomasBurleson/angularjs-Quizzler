@@ -73,6 +73,12 @@ Here is a brief explanation of the directory structures:
 
 ---
 
+### Working In-Progress
+
+NOTE: Run of unit tests and launch of Karma should be considered in-complete and **in-progress**
+
+---
+
 ### Pending Features
 
 Considering the short deliverable time for this solution, the current implementation has several aspects that should/must be improved:
