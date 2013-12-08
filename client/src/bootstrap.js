@@ -35,6 +35,8 @@
                 'ngRoute'      : '../vendor/angular-route/angular-route',
                 'ngSanitize'   : '../vendor/angular-sanitize/angular-sanitize',
 
+                // Configure alias to full paths
+
                 'auth'         : './quizzer/authentication',
                 'quiz'         : './quizzer/quiz',
                 'utils'        : './mindspace/utils'
@@ -89,7 +91,10 @@
              */
 
             angular
-                .module( appName,  [ "ngRoute", "ngSanitize", AuthenticateModule, QuizModule ] )
+                .module(
+                    appName,
+                    [ "ngRoute", "ngSanitize", AuthenticateModule, QuizModule ]
+                )
                 .config( LogDecorator  )
                 .config( RouteManager  );
 

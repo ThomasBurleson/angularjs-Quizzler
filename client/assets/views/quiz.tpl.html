@@ -1,28 +1,32 @@
-<div >
 
-    <h1>{{ quizName }}</h1>
+<div class="question-form-section">
 
-    <div class="challenge">
+    <header>
+        <div class="quiz-title">
+            <h1>Quiz: &nbsp; '{{ quizName }}'</h1>
+        </div>
 
-        <p>
-            {{ challenge.index }}. {{ challenge.question }}
-        </p>
+    </header>
 
-        <div ng-bind-html="challenge.details" class="details"></div>
+    <div class="login-content" >
 
-        <div class="content">
+        <div class="section-title">
+            <h3>{{ challenge.index }}. {{ challenge.question }}</h3>
 
-            <div ng-repeat="choice in challenge.choices" class="choices">
-                <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}"> {{ choice }}
+            <div ng-bind-html="challenge.details" class="details"></div>
+        </div>
+
+        <div ng-repeat="choice in challenge.choices" class="textbox-wrap">
+            <div class="input-group">
+                <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}" > {{ choice }}
             </div>
+        </div>
 
-            <br/>
-            <button ng-click="next()">{{ btnTitle }}</button>
-
+        <div class="login-form-action clearfix">
+            <button ng-click="next()" class="btn btn-success pull-right b.ue-btn">{{ btnTitle }} &nbsp; <i class="icon-chevron-right"></i></button>
         </div>
 
     </div>
-
 
 </div>
 

@@ -1,55 +1,62 @@
-<div >
+<div class="login-form-section">
 
     <header>
-        <div class="logo">
-            <h1 style="position:relative;top:-6px;">Quizzler Online</h1>
+        <div class="section-title">
+            <h1>Quizzler Online</h1>
         </div>
 
-        <div class="login_btn" ng-click="register();"><a href="#/signup">Register</a></div>
     </header>
 
-    <div class="content" >
+    <div class="login-content" >
 
-        <header>
-            <h3>LOG IN</h3>
+        <div class="section-title">
+            <h3>LogIn to your Account</h3>
             <p ng-hide="hasError">
                 Hello. Great to see you again!
             </p>
-            <div class="msg" style="height: 15px;" ng-show="hasError">
+            <div class="login_messsage" ng-show="hasError">
                 The username or password you entered was incorrect.
             </div>
-        </header>
-
-        <div class="">
-            <form ng-submit="submit();" novalidate name="login">
-                <fieldset>
-                    <span class="row">
-                        <input type="email" class="textbox" ng-model="email" placeholder="eMail">
-                        <span class="field_msg"></span>
-                    </span>
-
-                    <span class="row">
-                      <input type="password" class="textbox" ng-model="password" placeholder="Password">
-                      <span class="field_msg"></span>
-                    </span>
-
-                    <span class="row forgot">
-                    </span>
-
-                    <input type="hidden" name="form_check" value="nothing">
-                  <input type="submit" value="LOG IN" class="button red main small">
-                </fieldset>
-            </form>
         </div>
 
-        <footer class="login_extras">
+            <form ng-submit="submit();" novalidate name="login">
+                <div class="textbox-wrap">
+                    <div class="input-group">
+                        <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+                        <input type="email" ng-model="email" placeholder="eMail" class="form-control" >
+                        <span class="field_msg"></span>
+                    </div>
+                </div>
 
-            <p></p>
-            <a href="#" style="display:inline-block;margin-bottom:6px;padding-top: 30px;">I forgot my username or password.</a><br>
-            <a href="#">Don't have a <span style="font-weight: bold;">Quizzler</span> account? Create one in seconds.</a>
 
-        </footer>
+                <div class="textbox-wrap">
+                    <div class="input-group">
+                        <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+                        <input type="password" ng-model="password" class="form-control" placeholder="Password" >
+                        <span class="field_msg"></span>
+                    </div>
+                </div>
 
+
+                <div class="login-form-action clearfix">
+                    <button type="submit" class="btn btn-success pull-right green-btn">LogIn &nbsp; <i class="icon-chevron-right"></i></button>
+                </div>
+            </form>
+
+    </div>
+
+    <div class="login-form-links link1" >
+        <h4 class="blue">Don't have an Account?</h4>
+        <span>No worry</span>
+        <a href="#" class="blue">Click Here</a>
+        <span>to Register</span>
+    </div>
+
+    <div class="login-form-links link2">
+        <h4 class="red">Forget your Password?</h4>
+        <span>Dont worry</span>
+        <a href="#" class="red">Click Here</a>
+        <span>to Get New One</span>
     </div>
 
 

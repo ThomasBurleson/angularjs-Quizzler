@@ -59,7 +59,7 @@
                          // Normally we have remote REST services...
                          // return $http.post( URL.LOGIN, { email : email, password : md5.encrypt(password) } );
 
-                         return ( email === "" ) ?
+                         return ( email === "!!" ) ?
                                 makeRejected( "A valid email is required!" ) :
                                 makeResolved({ session : createGuid(), email : email });
                     },
