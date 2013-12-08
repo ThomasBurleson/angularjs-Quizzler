@@ -67,10 +67,18 @@
 
                 'jquery'    : '../vendor/jquery/jquery.min',
                 'angular'   : '../vendor/angular/angular',
+                'ngRoute'      : '../vendor/angular-route/angular-route',
+                'ngSanitize'   : '../vendor/angular-sanitize/angular-sanitize',
+
+                // Configure alias to full paths
+
+                'auth'         : './quizzer/authentication',
+                'quiz'         : './quizzer/quiz',
+                'utils'        : './mindspace/utils'
 
                 // Special library to run AngularJS Jasmine tests with LIVE $http
 
-                'live'      : '/test/spec/live',
+                'test'          : '/test/spec/quizzer',
 
                 // Special RequireJS plugin for "text!..." usages
 
@@ -80,8 +88,7 @@
             shim: {
                 'angular':
                 {
-                    exports : 'angular',
-                    deps    : [ 'jquery' ]
+                    exports : 'angular'
                 }
             },
 
@@ -93,21 +100,21 @@
 
         var dependencies = [
             'angular',
-            'quizzer/modules/DataServices',
-            'live/dataservices/delegates/AuthenticationDelegateSpec'
+            'test/authentication/AuthenticationSpec',
+            'test/authentication/LoginControllerSpec',
+            'test/authentication/SessionSpec'
         ];
 
 
         /**
          * Load all the Specs and then start the bootstrap engine...
          */
-        require( dependencies , function( angular, DataServices ) {
+        require( dependencies , function( angular ) {
 
             // Prepare `test` module for all the specs (if needed)
             // Provide contextRoot for all `live` delegate testing
 
-            angular.module('test.quizzer.Dataservices',   [ DataServices ])
-                   .value( "contextRoot", "http://166.78.24.115:8080/app/api/");
+            angular.module('test.quizzer', [ ]);
 
             // auto start test runner, once Require.js is done
             jasmineEnv.execute();

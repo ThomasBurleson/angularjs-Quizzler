@@ -36,18 +36,26 @@
         paths: {
 
             'text'      : '../vendor/_custom/require/text',
-            'jquery'    : '../vendor/jquery/jquery.min',
             'underscore': '../vendor/underscore/underscore-min',
+
             'angular'   : '../vendor/angular/angular',
+            'ngRoute'      : '../vendor/angular-route/angular-route',
+            'ngSanitize'   : '../vendor/angular-sanitize/angular-sanitize',
             'mocks'     : '../vendor/angular-mocks/angular-mocks',
+
+            // Configure alias to full paths
+
+            'auth'         : './quizzer/authentication',
+            'quiz'         : './quizzer/quiz',
+            'utils'        : './mindspace/utils',
+
             'sinon'     : '../vendor/sinon/lib/sinon'
         },
 
         shim: {
             'angular':
             {
-                exports : 'angular',
-                deps    : [ 'jquery' ]
+                exports : 'angular'
             },
             'underscore': {
                 exports: '_'

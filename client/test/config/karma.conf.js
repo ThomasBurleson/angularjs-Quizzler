@@ -45,8 +45,8 @@ module.exports = function(config)
         // Use `included = false` to let requireJS load them as needed
         // ... listed here so they can be resolved relative to the baseURL
 
-        { pattern: 'src/quizzer/**/*.js',             included: false },
-        { pattern: 'test/spec/mocks/**/*Spec.js',       included: false },
+        { pattern: 'src/quizzer/**/*.js',                 included: false },
+        { pattern: 'test/spec/quizzer/**/*Spec.js',       included: false },
 
         // Load and run the RequireJS/Karma bootstrap
         //
