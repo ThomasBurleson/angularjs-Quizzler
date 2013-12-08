@@ -71,6 +71,8 @@ Quizzler supports 1…n quizes defined in JSON format. The quiz data is dynamica
 
 Robust logging is used through-out the application and even during the bootstrappingn (before injection is available). Extra application features added to the implementation include history navigation, session management, question validation, and more. 
 
+![quizzler_logging](https://f.cloud.github.com/assets/210413/1701319/e169e7ba-604f-11e3-9f61-8fb45fad300e.jpg)
+
 Here is a brief explanation of the directory structures:
 
 *  `client`: directory contains the source code, css, html, and vendor libraries for Quizzler. 
