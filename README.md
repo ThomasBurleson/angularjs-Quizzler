@@ -3,7 +3,8 @@ Desk-Quizzler
 
 Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge to developers. 
 
-![snapshot](https://f.cloud.github.com/assets/210413/1700810/ed98eb38-602e-11e3-8e9f-17c8cc6c8adf.jpg)
+![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
+
 
 This repository contains all the source code
 
