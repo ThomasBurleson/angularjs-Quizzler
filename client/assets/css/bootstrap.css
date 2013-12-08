@@ -6168,7 +6168,7 @@ a .icon-flip-vertical:before {
     font-family: 'Roboto', 'PT Sans', sans-serif;
     font-weight: 300;
 }
-.quizzler .login-form-section,
+.quizzler .login-section,
 .quizzler .forgot-password-section {
     width: 100%;
     max-width: 360px;
@@ -6966,7 +6966,7 @@ body {
 .viewport {
     width : 100%;
     height: 2500px;
-    background:url("/assets/images/bkgrnd.jpg") repeat-y center 0;
+    background:url("../images/bkgrnd.jpg") repeat-y center 0;
 }
 
 .input-radio {
@@ -7034,6 +7034,31 @@ body {
 }
 
 
+.quizzler .login-section .login_messsage {
+    color: red;
+}
+
+
+/*
+ * **********************************************************************
+ *
+ * CSS for `Quiz Section` view
+ *
+ * **********************************************************************
+ */
+
+.quiz-section header {
+    padding-bottom: 20px;
+}
+
+
+/*
+ * **********************************************************************
+ *
+ * CSS for `Scoring Results` view
+ *
+ * **********************************************************************
+ */
 
 .quizzler .scoring-section {
     width: 100%;
