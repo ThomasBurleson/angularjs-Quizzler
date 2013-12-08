@@ -3,7 +3,7 @@ Desk-Quizzler
 
 Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge to developers. 
 
-![image](http://)
+![snapshot](https://f.cloud.github.com/assets/210413/1700810/ed98eb38-602e-11e3-8e9f-17c8cc6c8adf.jpg)
 
 This repository contains all the source code
 
@@ -35,8 +35,18 @@ The developer should note that the challenge is expected to approximately 20-40 
 
 ### Technical Requirements
 
-The developer should use:* GitHub* AngularJS* Jasmine* Bonus points for use of HAML and CoffeeScript
-Additionally the developer should:* Avoid jQuery (rely on AngularJS’ JQLite where possible)* Organize project in a way that makes sense.* Provide sufficient test coverage for all Javascript.
+The developer should use:
+
+* GitHub
+* AngularJS
+* Jasmine
+* Bonus points for use of HAML and CoffeeScript
+
+Additionally the developer should:
+
+* Avoid jQuery (rely on AngularJS’ JQLite where possible)
+* Organize project in a way that makes sense.
+* Provide sufficient test coverage for all Javascript.
 
 ---
 
