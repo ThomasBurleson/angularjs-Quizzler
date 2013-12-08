@@ -71,7 +71,7 @@ Quizzler supports 1…n quizes defined in JSON format. The quiz data is dynamica
 ![screen shot 2013-12-08 at 11 15 22 am](https://f.cloud.github.com/assets/210413/1701199/33d97d70-6047-11e3-8768-aa7ad52996de.jpg)
 
 
-Robust logging is used through-out the application and even during the bootstrappingn (before injection is available). Extra application features added to the implementation include history navigation, session management, question validation, and more. 
+Robust logging is used through-out the application and even logging during the bootstrapping process: before $log injection is available. Extra application features added to the implementation include history navigation, session management, question validation, and more. 
 
 ![quizzler_logging](https://f.cloud.github.com/assets/210413/1701319/e169e7ba-604f-11e3-9f61-8fb45fad300e.jpg)
 
