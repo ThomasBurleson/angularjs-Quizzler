@@ -154,9 +154,9 @@
                                         title    : question["question"],
                                         details  : question["details"],
                                         correct  : isCorrect,
-                                        answered : isCorrect ? supplant( "{0}. {1}", [ labelAt(given[j]), choiceAt( given[j] ) ] ) : "- no answer given -",
-                                        expected : supplant( "{0}. {1}", [ labelAt(expected[j]), choiceAt( expected[j] ) ] )
-
+                                        expected : supplant( "{0}. {1}", [ labelAt(expected[j]), choiceAt( expected[j] ) ] ),
+                                        answered : isCorrect          ? supplant( "{0}. {1}", [ labelAt(given[j]), choiceAt( given[j] ) ] ) :
+                                                   (given[j] != null) ? supplant( "{0}. {1}", [ labelAt(given[j]), choiceAt( given[j] ) ] ) : "- no answer given -"
                                     });
 
                                 }
