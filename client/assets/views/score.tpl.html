@@ -1,45 +1,69 @@
-<div id="summary">
+<div class="scoring-section">
 
-    <h1>Quiz: '{{ title }}'</h1>
+    <header>
+        <div class="scoring-title">
+            <h1>Quiz Results: &nbsp; '{{ title }}'</h1>
+        </div>
+
+    </header>
 
 
-    <h3>
-        Your quiz score is {{ grade }}%
-    </h3>
+    <div class="score-results">
+        <h3>
+            Your quiz score is <span class="grade">{{ grade }}%</span> correct.
+        </h3>
+    </div>
 
-    <br/>
-    <br/>
+    <h2>
+        Below is a review of your answers to the questions in this quiz:
+    </h2>
 
-    <div ng-repeat="score in scores" class="score">
+    <div ng-repeat="score in scores" class="score-item">
 
-        <h4>
-            {{ score.index }}. {{ score.title }}
-        </h4>
+        <div class="question">
+            <h3>
+                {{ score.index }}. {{ score.title }}
+            </h3>
 
-        <div ng-bind-html="score.details" class="details"></div>
-
-        <div ng-if="score.correct" class="correct">
-
-            <p><span >Correct</span></p>
-            <p>{{ score.expected }}</p>
+            <div ng-bind-html="score.details" class="details"></div>
 
         </div>
 
-        <div ng-if="!score.correct" class="incorrect" >
 
-            <p><span class="correct">You answered incorrectly:</span></p>
-            <p>{{ score.answered }}</p>
 
-            <p><span class="correct">Correct answer was:</span></p>
-            <p>{{ score.expected }}</p>
+        <div ng-if="score.correct" class="answer correct">
+
+            <div class="expected">
+
+                <p><span class="title">Correct:</span></p>
+                <p>{{ score.expected }}</p>
+
+            </div>
 
         </div>
 
-        <br/>
-        <br/>
+        <div ng-if="!score.correct" class="answer incorrect" >
+
+            <div class="given">
+
+                <p><span class="title">You answered incorrectly:</span></p>
+                <p>{{ score.answered }}</p>
+
+            </div>
+
+            <div class="expected">
+
+                <p><span class="title">Correct answer was:</span></p>
+                <p>{{ score.expected }}</p>
+
+            </div>
+
+        </div>
 
     </div>
 
-    <button ng-click="logout()">Logout</button>
+    <div class="next-action clearfix">
+        <button ng-click="logout()" class="btn btn-success pull-right blue-btn">Logout</button>
+    </div>
 
 </div>

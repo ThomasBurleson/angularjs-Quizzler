@@ -1,5 +1,5 @@
 
-<div class="question-form-section">
+<div class="quiz-section">
 
     <header>
         <div class="quiz-title">
@@ -8,22 +8,23 @@
 
     </header>
 
-    <div class="login-content" >
+    <div class="challenge" >
 
-        <div class="section-title">
-            <h3>{{ challenge.index }}. {{ challenge.question }}</h3>
+        <div class="question">
+            <h3>{{ challenge.index }}.) &nbsp; {{ challenge.question }}</h3>
 
             <div ng-bind-html="challenge.details" class="details"></div>
         </div>
 
-        <div ng-repeat="choice in challenge.choices" class="textbox-wrap">
-            <div class="input-group">
-                <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}" > {{ choice }}
+        <div ng-repeat="choice in challenge.choices" class="repeat-wrap">
+            <div class="input-group input-radio">
+                <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}" id="{{ $index }}">
+                <label for="{{ $index }}" class="radio-label">{{ choice }}</label>
             </div>
         </div>
 
-        <div class="login-form-action clearfix">
-            <button ng-click="next()" class="btn btn-success pull-right b.ue-btn">{{ btnTitle }} &nbsp; <i class="icon-chevron-right"></i></button>
+        <div class="next-action clearfix">
+            <button ng-click="next()" class="btn btn-success pull-right blue-btn">{{ btnTitle }} &nbsp; <i class="icon-chevron-right"></i></button>
         </div>
 
     </div>

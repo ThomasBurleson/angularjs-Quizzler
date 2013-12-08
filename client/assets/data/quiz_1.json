@@ -14,7 +14,7 @@
             "answer"   : "2"
         },
         {
-            "question" : "To create a columned list of two-line email subjects and dates for a master-detail view,which are the most semantically correct?",
+            "question" : "To create a columned list of two-line email subjects and dates for a master-detail view, which are the most semantically correct?",
             "choices"  : [
                 "<div>+<span>",
                 "<tr>+<td>",

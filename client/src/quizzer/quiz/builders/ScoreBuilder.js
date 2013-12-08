@@ -141,8 +141,10 @@
                                 // Loop all answers to build list of `review status` object
                                 for ( j = 0; j < count; j++ )
                                 {
+
                                     question  = quiz.questions[j];
                                     isCorrect = expected[j] == given[j];
+
 
                                     // Build list of `score` items
 
@@ -152,8 +154,8 @@
                                         title    : question["question"],
                                         details  : question["details"],
                                         correct  : isCorrect,
-                                        answered : isCorrect ? null : supplant( "{0}.{1}", [ labelAt(given[j]), choiceAt( given[j] ) ] ),
-                                        expected : supplant( "{0}.{1}", [ labelAt(expected[j]), choiceAt( expected[j] ) ] )
+                                        answered : isCorrect ? supplant( "{0}. {1}", [ labelAt(given[j]), choiceAt( given[j] ) ] ) : "- no answer given -",
+                                        expected : supplant( "{0}. {1}", [ labelAt(expected[j]), choiceAt( expected[j] ) ] )
 
                                     });
 
