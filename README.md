@@ -113,7 +113,25 @@ Additionally developer workflow processes could be significantly improved with t
 * Minification of application code
 
 
+---
 
+### Installation
+
+Download entire repository to local project directory.
+Open Terminal at *local* project directory.
+
+Use Bower to install vendor tools:
+
+```
+cd ./build
+bower install
+```
+
+Configure **Quizzler Web Server** using the following run/debug configuration (in WebStorm/IntelliJ):
+
+![runconfiguration](https://f.cloud.github.com/assets/210413/1701282/85906e9e-604c-11e3-8996-3d57b606c89d.jpg)
+
+Launch webServer and open browser to `http://localhost:8000/index.html`
  
   
 
