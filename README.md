@@ -84,7 +84,7 @@ Here is a brief explanation of the directory structures:
 
 ### Working In-Progress
 
-NOTE: Run of unit tests and launch of Karma should be considered in-complete and **in-progress**
+NOTE: Launching of Jasmine unit tests and execution of Karma should be considered in-complete and are currently **in-progress**!
 
 ---
 
