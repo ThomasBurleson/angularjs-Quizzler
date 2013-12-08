@@ -9,7 +9,7 @@
     "use strict";
 
     var dependencies = [
-        'quizzer/dataservices/model/Session'
+        'auth/Session'
     ];
 
     /**
@@ -30,7 +30,7 @@
              */
             beforeEach( function()
             {
-                module('test.quizzer.Dataservices');
+                module('test.quizzler');
             });
 
             /**

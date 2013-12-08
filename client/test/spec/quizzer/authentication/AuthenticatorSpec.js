@@ -33,7 +33,7 @@
              */
             beforeEach( function()
             {
-                module( 'test.quizzer.Dataservices' );
+                module( 'test.quizzler' );
 
                 /**
                  * Configure disposable module with values and factories
@@ -111,7 +111,7 @@
             describe("Tests for logout()", function ()
             {
 
-                it("logoutUser responds properly", inject(function( authenticator, $httpBackend )
+                it("logoutUser clears session", inject(function( authenticator, $httpBackend )
                 {
                     runs (
                         function()
@@ -120,7 +120,8 @@
                         },
                         function( response )
                         {
-                            expect( response.session ).toBeNull();
+                            expect( response[0]).toNotBe( null );
+                            expect( response[0].session ).toBeNull();
                         }
                     );
 

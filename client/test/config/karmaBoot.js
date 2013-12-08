@@ -89,7 +89,7 @@
         // NOTE: real server is at
         //       but we proxy it via http://localhost:8000/app/api/
 
-        angular.module( 'test.quizzer.Dataservices', [ ] )
+        angular.module( 'test.quizzler', [ ] )
             .config( LogInterceptor )
             .value( "contextRoot", "http://166.78.24.115:8080/app/api/");
 

@@ -16,7 +16,7 @@
         'auth/LoginController'
     ];
 
-    define( dependencies, function ( Factory, Authenticator, LoginController )
+    define( dependencies, function ( Factory, Session, Authenticator, LoginController )
     {
         describe( "Tests for LoginController", function()
         {
@@ -37,7 +37,7 @@
                 _loginController,
                 _scope    = null,
                 $location = null,
-                appName   = 'test.quizzler.Online';
+                appName   = 'test.quizzler';
 
 
             /**

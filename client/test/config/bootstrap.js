@@ -61,7 +61,7 @@
 
         requirejs.config({
 
-            baseUrl: '/src',
+            baseUrl: '../src',
 
             paths: {
 
@@ -74,11 +74,11 @@
 
                 'auth'         : './quizzer/authentication',
                 'quiz'         : './quizzer/quiz',
-                'utils'        : './mindspace/utils'
+                'utils'        : './mindspace/utils',
 
                 // Special library to run AngularJS Jasmine tests with LIVE $http
 
-                'test'          : '/test/spec/quizzer',
+                'test'          : '../test/spec/quizzer',
 
                 // Special RequireJS plugin for "text!..." usages
 
@@ -100,7 +100,8 @@
 
         var dependencies = [
             'angular',
-            'test/authentication/AuthenticationSpec',
+            'utils/logger/LogDecorator',
+            'test/authentication/AuthenticatorSpec',
             'test/authentication/LoginControllerSpec',
             'test/authentication/SessionSpec'
         ];
@@ -109,12 +110,13 @@
         /**
          * Load all the Specs and then start the bootstrap engine...
          */
-        require( dependencies , function( angular ) {
+        require( dependencies , function( angular, LogDecorator ) {
 
             // Prepare `test` module for all the specs (if needed)
             // Provide contextRoot for all `live` delegate testing
 
-            angular.module('test.quizzer', [ ]);
+            angular.module('test.quizzler', [ ])
+                   .config( LogDecorator  );
 
             // auto start test runner, once Require.js is done
             jasmineEnv.execute();
