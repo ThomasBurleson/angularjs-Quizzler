@@ -1,0 +1,14 @@
+{
+  "name": "headjs-notify",
+  "homepage": "https://github.com/Mindspace/headjs",
+  "version": "0.9.7",
+  "_release": "0.9.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.9.7",
+    "commit": "d603b74390c3b5fd8dbfa058c2267b9e644c0791"
+  },
+  "_source": "git://github.com/Mindspace/headjs.git",
+  "_target": "0.9.7",
+  "_originalSource": "headjs-notify"
+}

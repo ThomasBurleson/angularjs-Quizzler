@@ -1,0 +1,4 @@
+/test/node_modules/.bin/
+/test/node_modules/q/
+/test/node_modules/jasmine-node/
+/test/bower_components/

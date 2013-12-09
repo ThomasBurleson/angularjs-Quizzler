@@ -1,0 +1,35 @@
+
+<div class="quiz-section">
+
+    <header>
+        <div class="quiz-title">
+            <h1>Quiz: &nbsp; '{{ quizName }}'</h1>
+        </div>
+
+    </header>
+
+    <div class="challenge" >
+
+        <div class="question">
+            <h3>{{ challenge.index }}.) &nbsp; {{ challenge.question }}</h3>
+
+            <div ng-bind-html="challenge.details" class="details"></div>
+        </div>
+
+        <div ng-repeat="choice in challenge.choices" class="repeat-wrap">
+            <div class="input-group input-radio">
+                <input type="radio" name="choice" ng-model="challenge.selected" ng-value="{{ $index }}" id="{{ $index }}">
+                <label for="{{ $index }}" class="radio-label">{{ choice }}</label>
+            </div>
+        </div>
+
+        <div class="next-action clearfix">
+            <button ng-click="next()" class="btn btn-success pull-right blue-btn">{{ btnTitle }} &nbsp; <i class="icon-chevron-right"></i></button>
+        </div>
+
+    </div>
+
+</div>
+
+
+

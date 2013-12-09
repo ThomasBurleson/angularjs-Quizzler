@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jasmine as Promised Tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="./bower_components/jasmine/lib/jasmine-core/jasmine.css" />
+</head>
+
+<body>
+
+    <script type="text/javascript" src="./bower_components/jasmine/lib/jasmine-core/jasmine.js"></script>
+    <script type="text/javascript" src="./bower_components/jasmine/lib/jasmine-core/jasmine-html.js"></script>
+    <script type="text/javascript" src="../src/jasmine-as-promised.js"></script>
+
+    <script type="text/javascript" src="./bower_components/q/q.js"></script>
+    <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-mocks/angular-mocks.js"></script>
+
+    <script>
+    (function(  window, jasmine, angular ) {
+        "use strict";
+
+        // ****************************************************
+        // Prepare the onLoad interceptor
+        // ****************************************************
+
+        /**
+         * When window `onload` is ready, start the bootstrap...
+         */
+        window.onload = (function( handler )
+        {
+            var jasmineEnv       = null,
+                /**
+                 * Configure jasmine Report and Environment
+                 */
+                configureJasmine = function ()
+                {
+                    var htmlReporter = new jasmine.HtmlReporter(),
+                            jasmineEnv   = jasmine.getEnv(),
+                            filterFn     = function (spec)
+                            {
+                                return htmlReporter.specFilter(spec);
+                            };
+
+                    jasmineEnv.VERBOSE        = true;
+                    jasmineEnv.updateInterval = 1000;
+                    jasmineEnv.specFilter     = filterFn;
+                    jasmineEnv.addReporter(htmlReporter);
+
+                    return jasmineEnv;
+                },
+                /**
+                 * Build `window.onLoad` tail-hook
+                 */
+                interceptor = function()
+                {
+                    if ( handler ) handler();
+
+                    startTests();
+
+                    // auto start test runner, once Require.js is done
+                    jasmineEnv.execute();
+                };
+
+            jasmineEnv = configureJasmine( jasmine);
+            return interceptor;
+
+        })( window.onload );
+
+
+        // ****************************************************
+        // Unit Tests
+        // ****************************************************
+
+        function startTests ()
+        {
+            var  TEST_APP        = "test.japSampleApp",
+                    VALID_USER   = "Domenic",
+                    UNKNOWN_USER = "unknownUser";
+
+            /**
+             * Build AngularJS app useful for testing purposes
+             * Set dependency on Angular-mocks: to use $timeout.flush() extensions for mocks
+             */
+            angular.module( TEST_APP, [ 'ngMock' ]  )
+                   .service( "authenticator", function( $q )
+                   {
+                       var validateWith = function( future )
+                           {
+                              return function ( userName )
+                              {
+                                   var dfd      = future.defer(),
+                                       response = {
+                                           username : userName ,
+                                           level    : "awesome",
+                                           success  : true
+                                       };
+
+                                   if ( userName != VALID_USER )   dfd.reject( UNKNOWN_USER );
+                                   else                            dfd.resolve( response );
+
+                                   return dfd.promise;
+                              };
+                           };
+
+                       return {
+                           validateUser  : validateWith( $q ),      // Using AngularJS $q
+                           validateUserQ : validateWith( Q )        // Using Q.js
+                       };
+                   });
+
+
+            describe( "`runs( promise )` tests ", function ()
+            {
+                beforeEach( function()
+                {
+                    module( TEST_APP );
+                });
+
+                it( "should pass with $q if given valid user", inject(function( authenticator )
+                {
+                    runs( function()
+                    {
+                        return authenticator
+                                .validateUser( VALID_USER )    // Has internal flush on delay
+                                .then( function(response)
+                                {
+                                    expect( response.success ) .toBeTruthy();
+                                    expect( response.level )   .toBe( "awesome" );
+                                });
+
+                    });
+                }));
+
+                it( "should fail with $q if given INVALID user", inject(function( authenticator )
+                {
+                    // Test Jasmine runs() to test async service
+
+                    runs( function()
+                    {
+                        return authenticator
+                                .validateUser( "thomas" )
+                                .catch( function( fault )
+                                {
+                                    expect( fault ).toBe( UNKNOWN_USER );
+                                });
+                    });
+                }));
+
+
+                it( "should pass with Q.defer() if given valid user", inject(function( authenticator )
+                {
+                    // Test Jasmine-as-Promised runs() extensions (to support Promised-based async tests)
+
+                    runs( function()
+                    {
+                        return authenticator
+                                .validateUserQ( VALID_USER )
+                                .then( function(response)
+                                {
+                                    expect( response.success ) .toBeTruthy();
+                                    expect( response.level )   .toBe( "awesome" );
+                                });
+                    });
+                }));
+
+                it( "should fail with Q.defer() if given INVALID user", inject(function( authenticator )
+                {
+                    // Test Jasmine-as-Promised runs() extensions (to support Promised-based async tests)
+
+                    runs( function()
+                    {
+                        return authenticator
+                                .validateUserQ( "thomas" )
+                                .catch( function(fault)
+                                {
+                                    expect( fault ).toBe( UNKNOWN_USER );
+                                });
+                    });
+                }));
+
+            });
+
+
+            describe( "`runs( function(){} )` tests ", function ()
+            {
+                beforeEach( function()
+                {
+                    module( TEST_APP );
+                });
+
+
+                it( "should pass with $q and $browser.flush() if given valid user", inject(function( authenticator, $browser )
+                {
+                    // Test Jasmine runs() when NO Promise is returned
+
+                    runs( function()
+                    {
+                        authenticator
+                                .validateUser( VALID_USER )    // Has internal flush on delay
+                                .then( function(response)
+                                {
+                                    expect( response.success ) .toBeTruthy();
+                                    expect( response.level )   .toBe( "awesome" );
+                                });
+
+                        // Force flush... so promise handlers are triggered
+                        // NOTE: this must be done .then() above so the handlers are fired in the flushing
+
+                        $browser.defer.flush();
+
+                    });
+                }));
+
+                it( "should pass when using $q and $browser.flush() if given valid user", inject(function( authenticator, $browser )
+                {
+                    // Test Jasmine runs() to test async service
+
+                    runs( function()
+                    {
+                        authenticator
+                                .validateUser( VALID_USER )
+                                .then( function(response)
+                                {
+                                    expect( response.success ) .toBeTruthy();
+                                    expect( response.level )   .toBe( "awesome" );
+                                });
+
+                        // Force flush... so promise handlers are triggered
+                        // NOTE: this must be done .then() above so the handlers are fired in the flushing
+
+                        $browser.defer.flush();
+
+                    });
+                }));
+
+                it( "should fail when using $q and $browser.flush() if given INVALID user", inject(function( authenticator, $browser )
+                {
+                    // Test Jasmine runs() to test async service
+
+                    runs( function()
+                    {
+                        authenticator
+                                .validateUser( "thomas" )
+                                .catch( function(fault)
+                                {
+                                    expect( fault ).toBe( UNKNOWN_USER );
+                                });
+
+
+                        // Force flush... so promise handlers are triggered
+                        // NOTE: this must be done .catch() above so the handlers are fired in the flushing
+
+                        $browser.defer.flush();
+
+                    });
+                }));
+
+
+                it( "should pass when using Q.defer if given valid user", inject(function( authenticator, $timeout )
+                {
+                    // Test Jasmine runs() to test async service
+
+                    runs( function()
+                    {
+                        authenticator
+                                .validateUserQ( VALID_USER )
+                                .then( function(response)
+                                {
+                                    expect( response.success ) .toBeTruthy();
+                                    expect( response.level )   .toBe( "awesome" );
+                                });
+
+                    });
+                }));
+
+                it( "should fail when using Q.defer() if given INVALID user", inject(function( authenticator, $timeout )
+                {
+                    // Test Jasmine runs() to test async service
+
+                    runs( function()
+                    {
+                        authenticator
+                            .validateUserQ( "thomas" )
+                            .catch( function(fault)
+                            {
+                                expect( fault ).toBe( UNKNOWN_USER );
+                            });
+
+                    });
+                }));
+
+            });
+
+        }
+
+    }( window, jasmine, angular ));
+    </script>
+
+</body>
+</html>

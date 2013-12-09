@@ -1,0 +1,69 @@
+<div class="scoring-section">
+
+    <header>
+        <div class="scoring-title">
+            <h1>Quiz Scoring results: &nbsp; '{{ title }}'</h1>
+        </div>
+
+    </header>
+
+
+    <div class="score-results">
+        <h3>
+            Your quiz score is <span class="grade">{{ grade }}%</span> correct.
+        </h3>
+    </div>
+
+    <h2>
+        Below is a review of your answers to the questions in this quiz:
+    </h2>
+
+    <div ng-repeat="score in scores" class="score-item">
+
+        <div class="question">
+            <h3>
+                {{ score.index }}. {{ score.title }}
+            </h3>
+
+            <div ng-bind-html="score.details" class="details"></div>
+
+        </div>
+
+
+
+        <div ng-if="score.correct" class="answer correct">
+
+            <div class="expected">
+
+                <p><span class="title">Correct:</span></p>
+                <p>{{ score.expected }}</p>
+
+            </div>
+
+        </div>
+
+        <div ng-if="!score.correct" class="answer incorrect" >
+
+            <div class="given">
+
+                <p><span class="title">You answered incorrectly:</span></p>
+                <p>{{ score.answered }}</p>
+
+            </div>
+
+            <div class="expected">
+
+                <p><span class="title">Correct answer was:</span></p>
+                <p>{{ score.expected }}</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="next-action clearfix">
+        {{ email }}<button ng-click="logout()" class="btn btn-success pull-right blue-btn">Logout</button>
+    </div>
+
+</div>

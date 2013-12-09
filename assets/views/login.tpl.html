@@ -1,0 +1,65 @@
+<div class="login-section">
+
+    <header>
+        <div class="section-title">
+            <h1>Quizzler Online</h1>
+        </div>
+
+    </header>
+
+    <div class="login-content" >
+
+        <div class="section-title">
+            <h3>LogIn to your Account</h3>
+            <p ng-hide="hasError">
+                Hello. Great to see you again!
+            </p>
+            <div class="login_messsage" ng-show="hasError">
+                The username or password you entered was incorrect.
+            </div>
+        </div>
+
+            <form ng-submit="submit();" novalidate name="login">
+                <div class="textbox-wrap">
+                    <div class="input-group">
+                        <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+                        <input type="email" ng-model="email" placeholder="eMail" required="true" class="form-control" >
+                        <span class="field_msg"></span>
+                    </div>
+                </div>
+
+
+                <div class="textbox-wrap">
+                    <div class="input-group">
+                        <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+                        <input type="password" ng-model="password" class="form-control" required="true" placeholder="Password" >
+                        <span class="field_msg"></span>
+                    </div>
+                </div>
+
+
+                <div class="login-form-action clearfix">
+                    <button type="submit" class="btn btn-success pull-right green-btn">LogIn &nbsp; <i class="icon-chevron-right"></i></button>
+                </div>
+            </form>
+
+    </div>
+
+    <div class="login-form-links link1" >
+        <h4 class="blue">Don't have an Account?</h4>
+        <span>No worry</span>
+        <a href="#" class="blue">Click Here</a>
+        <span>to Register</span>
+    </div>
+
+    <div class="login-form-links link2">
+        <h4 class="blue">Forget your Password?</h4>
+        <span>Dont worry</span>
+        <a href="#" class="blue">Click Here</a>
+        <span>to Get New One</span>
+    </div>
+
+
+</div>
+
+

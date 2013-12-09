@@ -1,0 +1,27 @@
+{
+    "author": "Thomas Burleson",
+    "email": "ThomasBurleson@gmail.com",
+    "url": "http://www.gridlinked.info",
+    "name": "jasmine-as-promised",
+    "description": "Extensions to Jasmine unit testing to transparently support Promises in async testing scenarios",
+    "keywords": [
+        "jasmine",
+        "promises",
+        "unit testing",
+        "async"
+    ],
+    "main": "./src/jasmine-as-promised.js",
+    "homepage": "https://github.com/Mindspace/jasmine-as-promised",
+    "bugs": {
+        "email": "ThomasBurleson@gmail.com"
+    },
+    "license": "MIT",
+    "version": "0.0.5",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Mindspace/jasmine-as-promised"
+    },
+    "devDependencies": {
+        "jasmine": "~1.3.1"
+    }
+}
