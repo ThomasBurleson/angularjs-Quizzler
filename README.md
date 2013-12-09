@@ -82,11 +82,6 @@ Here is a brief explanation of the directory structures:
 *  `tools`: directory contains a CoffeeScript webserver that allows developers to easily run and debug `Quizzler`
 *  `docs`: directory contains the initial challenge requirements (PDF) and mockups.
 
----
-
-### Working In-Progress
-
-NOTE: Launching of Jasmine unit tests and execution of Karma should be considered in-complete and are currently **in-progress**!
 
 ---
 
@@ -102,11 +97,20 @@ cd ./build
 bower install
 ```
 
-Configure **Quizzler Web Server** using the following run/debug configuration (in WebStorm/IntelliJ):
+Use Terminal to start the CoffeeScript, built-in **Quizzler Web Server** web server; provided in the `tools` directory:
+
+```
+cd ./client
+coffee ../tools/webserver/webServer.coffee
+```
+
+or configure web server in your WebStrom/IntelliJ IDE using the following run/debug configuration:
 
 ![runconfiguration](https://f.cloud.github.com/assets/210413/1701282/85906e9e-604c-11e3-8996-3d57b606c89d.jpg)
 
-Launch webServer and open browser to `http://localhost:8000/index.html`
+Launch webServer.
+
+The web server is configured to have its webroot at `./client`. So open browser and navigate to `http://localhost:8000/index.html`.
  
   
 ---
@@ -143,4 +147,10 @@ Additionally developer workflow processes could be significantly improved with t
 * Deployment to Jenkins/Travis for CI and testing
 * Use of CoffeeScript instead of hand-written Javascript
 * Minification of application code
+
+---
+
+### Working In-Progress
+
+NOTE: Launching of Jasmine unit tests and execution of Karma should be considered in-complete and are currently **in-progress**!
 
