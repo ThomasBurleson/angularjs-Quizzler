@@ -106,7 +106,7 @@ or configure web server in your WebStrom/IntelliJ IDE using the following run/de
 
 Launch webServer.
 
-The web server is configured to have its webroot at `./client`. So open browser and navigate to `http://localhost:8000/index.html`.
+A deployment process to concatenate, minimize, and deploy a production version of `Quizzler` is not currently available. In the meantime, developers can use the `./client` directory as the webroot... So open browser and navigate to `http://localhost:8000/index.html`.
  
   
 ---
