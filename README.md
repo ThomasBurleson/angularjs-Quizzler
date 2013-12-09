@@ -1,21 +1,3 @@
-Desk-Quizzler
-=============
-
-Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge presented to developers who are interviewing at `www.<xxx>.com`.
-
-![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
-
-Snapshots of running application:
-
-*  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
-
-*  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
-
-*  [Scoring ](https://f.cloud.github.com/assets/210413/1701316/f9660ac0-604e-11e3-9f88-86b080463345.jpg)
-
-
-
----
 
 ### Purpose of the `Quizzler` Challenge
 
@@ -33,7 +15,7 @@ Upon completion (or partial completion) of the challenge, the review teams' asse
 
 ---
 
-### The Challenge
+### The `Quizzler` Challenge
 
 The developer candidate is asked to implement an AngularJS web application that will allow users to take a quiz, evaluate the *given* answers, and present a review of quiz scoring to the user/tester.  The review should show the correct answers and - when appropriate - also show the tester their incorrect answers. Logout should also be supported after the review in presented.
 
@@ -64,6 +46,19 @@ Additionally the developer should:
 ---
 
 ### Implementation
+
+Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge presented to developers who are interviewing at `www.<xxx>.com`.
+
+![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
+
+Snapshots of running application:
+
+*  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
+
+*  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
+
+*  [Scoring ](https://f.cloud.github.com/assets/210413/1701316/f9660ac0-604e-11e3-9f88-86b080463345.jpg)
+
 
 Using AngularJS (v1.2.3) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstrapping.
 HeadJS is used to asynchronously load the required scripts **before** bootstrapping the NG application.
