@@ -77,7 +77,7 @@
                                        // Cache score information for use by ScoreController
                                        // Navigate to `Score Results` view
 
-                                       $log.debug( supplant("onResult_submitTest( Test Score = {grade} )", [score] ));
+                                       $log.debug( supplant("onResult_submitTest( Test Score = {totalScore} )", [score] ));
 
                                        session.score = score;
                                        session.quiz  = null;

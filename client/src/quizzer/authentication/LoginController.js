@@ -65,78 +65,78 @@
                     {
                         $log.debug( "onLogin( email={email}, password={password} )", $scope );
 
-                        $log.tryCatch( function()
-                        {
-                            return  authenticator
-                                        .login( $scope.email, $scope.password )
-                                        .then( function onResult_login( response )
-                                        {
-                                            $log.debug( "onResult_login( sessionID={session}" ,response );
+                        return $log.tryCatch( function()
+                                {
+                                    return  authenticator
+                                                .login( $scope.email, $scope.password )
+                                                .then( function onResult_login( response )
+                                                {
+                                                    $log.debug( "onResult_login( sessionID={session}" ,response );
 
-                                            session.sessionID = response.session;
-                                            session.account   = {
-                                              userName :  $scope.email,
-                                              password :  $scope.password,
-                                              email    :  $scope.email
-                                            };
+                                                    session.sessionID = response.session;
+                                                    session.account   = {
+                                                      userName :  $scope.email,
+                                                      password :  $scope.password,
+                                                      email    :  $scope.email
+                                                    };
 
-                                            errorMessage( "" );
+                                                    errorMessage( "" );
 
-                                            // Navigate to the Quiz
-                                            // TODO - uses constants file for view navigations...
+                                                    // Navigate to the Quiz
+                                                    // TODO - uses constants file for view navigations...
 
-                                            $location.path( '/quiz' );
+                                                    $location.path( '/quiz' );
 
-                                            return session;
-                                        },
-                                        function onFault_login( fault )
-                                        {
-                                            fault = fault || SERVER_NOT_RESPONDING;
-                                            fault = supplant( String(fault), [ "onLogin()" ] );
+                                                    return session;
+                                                },
+                                                function onFault_login( fault )
+                                                {
+                                                    fault = fault || SERVER_NOT_RESPONDING;
+                                                    fault = supplant( String(fault), [ "onLogin()" ] );
 
-                                            $log.error( fault.toString() );
+                                                    $log.error( fault.toString() );
 
-                                            // force clear any previously valid session...
-                                            session.sessionID = null;
-                                            errorMessage( fault.toString() );
+                                                    // force clear any previously valid session...
+                                                    session.sessionID = null;
+                                                    errorMessage( fault.toString() );
 
-                                            if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
-                                            if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
+                                                    if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
+                                                    if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
 
-                                            return $q.reject( session );
-                                        });
-                            });
+                                                    return $q.reject( session );
+                                                });
+                                });
                     },
                     onLogout = function()
                     {
                         $log.debug( "onLogout( )" );
 
-                        $log.tryCatch( function()
-                        {
-                            return authenticator
-                                        .logout( )
-                                        .then( function onResult_logout( )
-                                        {
-                                            $log.debug( "onResult_logout()" );
+                        return $log.tryCatch( function()
+                                {
+                                    return authenticator
+                                                .logout( )
+                                                .then( function onResult_logout( )
+                                                {
+                                                    $log.debug( "onResult_logout()" );
 
-                                            $scope.sessionID = null;
-                                            errorMessage( "" );
-                                        },
-                                        function onFault_login( fault )
-                                        {
-                                            fault = fault || SERVER_NOT_RESPONDING;
-                                            $log.error( fault.toString() );
+                                                    $scope.sessionID = null;
+                                                    errorMessage( "" );
+                                                },
+                                                function onFault_login( fault )
+                                                {
+                                                    fault = fault || SERVER_NOT_RESPONDING;
+                                                    $log.error( fault.toString() );
 
-                                            // force clear any previously valid session...
-                                            session.sessionID = null;
-                                            errorMessage( fault );
+                                                    // force clear any previously valid session...
+                                                    session.sessionID = null;
+                                                    errorMessage( fault );
 
-                                            if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
-                                            if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
+                                                    if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
+                                                    if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
 
-                                            return $q.rejected( session );
-                                        });
-                        });
+                                                    return $q.rejected( session );
+                                                });
+                                });
                     };
 
 

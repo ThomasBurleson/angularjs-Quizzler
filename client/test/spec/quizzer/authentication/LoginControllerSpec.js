@@ -22,8 +22,6 @@
         {
                 /**
                  * $location.path() replacement... for testing
-                 * @param root
-                 * @constructor
                  */
             var LocationMock = function (root)
                 {
@@ -34,44 +32,57 @@
                         return path ? root = path : root;
                     };
                 },
-                _loginController,
-                _scope    = null,
-                $location = null,
-                appName   = 'test.quizzler';
-
-
-            /**
-             * Load the `module`
-             */
-            beforeEach( function()
-            {
-                module( appName );
-                module( function( $provide, $injector )
-                {
-                    // Configure injectable instances
-
-                    $provide.service( "session",            Session);
-                    $provide.service( "authenticator",      Authenticator );
-                    $provide.controller( "loginController", LoginController   );
-
-                    // Prepare to intercept $location navigation calls...
-
-                    $location = $injector.get( "$location" );
-                    spyOn( $location, 'path').andCallFake( new LocationMock('/login').path );
-                });
-            });
+                _loginController = null,
+                _scope           = null,
+                $location        = null,
+                appName          = 'test.quizzler';
 
 
             // ******************************************************
             // Setup/Teardown  Methods
             // ******************************************************
 
-            beforeEach( inject( function( loginController )
-            {
-                _loginController = loginController;
-                _scope           = loginController.$scope;
-            }));
 
+            beforeEach( function()
+            {
+                // Make sure test app is loaded... @see /test/config/bootstrap.js
+                module( appName );
+
+                module( function( $provide )
+                {
+                    $provide.service( 'session',         Session       );
+                    $provide.service( 'authenticator',   Authenticator );
+
+                });
+
+            });
+
+            beforeEach( inject( function( $rootScope, $injector, $controller )
+            {
+                var $q            = $injector.get( "$q" ),
+                    $log          = $injector.get( '$log' ),
+                    $http         = $injector.get( "$http" ),
+                    session       = $injector.get( "session" ),
+                    authenticator = $injector.get( "authenticator" );
+
+                // Prepare to intercept $location navigation calls...
+
+                $location = $injector.get( "$location" );
+                spyOn( $location, 'path').andCallFake( new LocationMock('/login').path );
+
+                // Create instances LoginController with known scope...
+
+                _scope           = $rootScope.$new();
+                _loginController = $controller( LoginController, {
+                    session         : session,
+                    authenticator   : authenticator,
+                    $scope          : _scope,
+                    $q              : $q,
+                    $log            : $log,
+                    $location       : $location
+                });
+
+            }));
 
             afterEach( function( )
             {
@@ -98,14 +109,15 @@
                 _scope.email = "ThomasBurleson@Gmai.com";
                 _scope.password = "slaveToExcellence";
 
-                runs( function() {
-                    return _loginController
-                                .submit()
-                                .then( function( session )
-                                {
-                                   expect( session.sessionID.length ).toBeGreaterThan( 0 );
-                                   expect( $location.path()).toBe( '/quiz' );
-                                });
+                runs( function()
+                {
+                    return _scope
+                              .submit()
+                              .then( function( session )
+                              {
+                                 expect( session.sessionID.length ).toBeGreaterThan( 0 );
+                                 expect( $location.path()).toBe( '/quiz' );
+                              });
                 });
             });
 
@@ -114,13 +126,14 @@
                 _scope.email = "";
                 _scope.password = "";
 
-                runs( function() {
-                    return _loginController
-                        .submit()
-                        .catch( function( session )
-                        {
-                            expect( session.sessionID ).toBeNull( );
-                        });
+                runs( function()
+                {
+                    return _scope
+                              .submit()
+                              .catch( function( session )
+                              {
+                                  expect( session.sessionID ).toBeNull( );
+                              });
                 });
             });
 
@@ -129,13 +142,13 @@
                 session.sessionID = "someDummyGUID";
 
                 runs( function() {
-                    return _loginController
-                        .logout()
-                        .then( function( session )
-                        {
-                            expect( session.sessionID ).toBeNull( );
-                            expect( $location.path()).toBe( '/login' );
-                        });
+                    return _scope
+                              .logout()
+                              .then( function( session )
+                              {
+                                  expect( session.sessionID ).toBeNull( );
+                                  expect( $location.path()).toBe( '/login' );
+                              });
                 });
             }));
 
