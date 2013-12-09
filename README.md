@@ -53,9 +53,7 @@ Quizzler is an AngularJS `online quiz builder and testing` application; develope
 Snapshots of running application:
 
 *  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
-
 *  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
-
 *  [Scoring ](https://f.cloud.github.com/assets/210413/1701316/f9660ac0-604e-11e3-9f88-86b080463345.jpg)
 
 
