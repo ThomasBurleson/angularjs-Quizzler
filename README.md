@@ -36,13 +36,13 @@ Candidates can use their own tools, own resources, and invest significantly more
 The developer candidate is asked to implement an AngularJS web application that will allow users to take a quiz, evaluate the *given* answers, and present a review of quiz scoring to the user/tester.  The review should show the correct answers and - when appropriate - also show the tester their incorrect answers. Logout should also be supported after the review in presented.
 
 *  Six (6) questions are initially provided; without answers to the actual questions. 
-  * See the [Requirements PDF](https://github.com/Mindspace/Desk-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
-  
-*  See the [Design Requirements](https://raw.github.com/Mindspace/Desk-Quizzler/master/docs/quiz_comps.jpg) is provided.  
 
 Once the developer has **finished** (to whatever level they decide is appropriate), the developer should configure a GitHub repository as well as the running app (how Quizzler is deployed it is up to the developer). The review team will review Quizzler based on accuracy, best ­practice, style, and... attitude.
 
 The developer should note that the challenge is expected to approximately 20-40 hours of effort.
+
+*  See the [Requirements PDF](https://github.com/Mindspace/Desk-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
+*  See the [Design Requirements](https://raw.github.com/Mindspace/Desk-Quizzler/master/docs/quiz_comps.jpg)
 
 ### Technical Requirements
 
