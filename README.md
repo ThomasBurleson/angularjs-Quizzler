@@ -1,3 +1,5 @@
+![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
+
 ### Purpose of the `Quizzler` Challenge
 
 The purpose of the `Quizzler` challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their challenge is to create an online HTML5 application... and it is a non-trivial request imposed on the candidate.
@@ -47,8 +49,6 @@ Additionally the developer should:
 ### Implementation
 
 Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge presented to developers who are interviewing at `www.<xxx>.com`.
-
-![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
 
 Snapshots of running application:
 
