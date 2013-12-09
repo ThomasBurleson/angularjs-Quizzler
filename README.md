@@ -19,9 +19,11 @@ Snapshots of running application:
 
 ### Purpose of the `Quizzler` Challenge
 
-Presenting a **work-from-home** challenge to create an online HTML5 application is a non-trivial request imposed on the candidate... but it has HUGE benefits in  that allows a  *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate. It also removes much of the `time` factor from the challenge. 
+The purpose of the `Quizzler` challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their challenge is to create an online HTML5 application... and it is a non-trivial request imposed on the candidate.
 
-Candidates can use their own tools, own resources, and invest significantly more time into the project that what could be possible in a **Google Hangout**. And the review teams' assessment will consider factors such as:
+But it has HUGE benefits in  that allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate. It also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project that what could be possible in a **Google Hangout**. 
+
+Upon completion (or partial completion) of the challenge, the review teams' assessment will consider factors such as:
 
 * motivation, attitude, and competence
 * skill levels, best practices, coding style, clarity-of-code
