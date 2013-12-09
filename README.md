@@ -38,7 +38,7 @@ The developer candidate is asked to implement an AngularJS web application that 
 *  Six (6) questions are initially provided; without answers to the actual questions. 
   * See the [Requirements PDF](https://github.com/Mindspace/Desk-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
   
-*  A simple mockup of a [typical layout](https://raw.github.com/Mindspace/Desk-Quizzler/master/docs/quiz_comps.jpg) is provided.  
+*  See the [Design Requirements](https://raw.github.com/Mindspace/Desk-Quizzler/master/docs/quiz_comps.jpg) is provided.  
 
 Once the developer has **finished** (to whatever level they decide is appropriate), the developer should configure a GitHub repository as well as the running app (how Quizzler is deployed it is up to the developer). The review team will review Quizzler based on accuracy, best ­practice, style, and... attitude.
 
