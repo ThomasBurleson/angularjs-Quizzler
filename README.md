@@ -22,7 +22,7 @@ The developer candidate is asked to implement an AngularJS web application that 
 
 Once the developer has **finished** (to whatever level they decide is appropriate), the developer should configure a GitHub repository as well as the running app (how Quizzler is deployed it is up to the developer). The review team will review Quizzler based on accuracy, best ­practice, style, and... attitude.
 
-The developer should note that the challenge is expected to approximately 20-40 hours of effort.
+The developer should note that the challenge is expected to require approximately 20-40 hours of effort.
 
 *  See the [Requirements PDF](https://github.com/Mindspace/Desk-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
 *  See the [Design Requirements](https://raw.github.com/Mindspace/Desk-Quizzler/master/docs/quiz_comps.jpg)
