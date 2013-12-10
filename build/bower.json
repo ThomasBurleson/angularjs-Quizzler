@@ -1,13 +1,13 @@
 {
-  "name": "html5",
+  "name": "Quizzler",
   "version": "0.0.1",
-  "homepage": "https://github.com/Mindspace/ng-OnlineQuiz",
+  "homepage": "https://github.com/Mindspace/Desk-Quizzler",
   "authors": [
     "Thomas Burleson <ThomasBurleson@Gmail.com>"
   ],
   "description": "Dynamic Online-Quiz application using AngularJS HTML5",
   "main": "index.html",
-  "license": "MIT",
+  "license": "GPL",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -7,7 +7,7 @@
  *
  *       <gravatar email="user.email" size="50" default-image="'monsterid'" ></gravatar>
  *           which injects into the DOM:
- *       '<img ng-src="http://www.gravatar.com/avatar/{{hash}}{{getParams}}"/>
+ *       '<img ng-src="http://www.gravatar.com/avatar/{{hash}}{{params}}"/>
  *
  *  Configuration:
  *
@@ -54,14 +54,14 @@
                 generateParams = function ()
                 {
                     var options = [];
-                    scope.getParams = '';
+                    scope.params = '';
                     angular.forEach(scope.options, function(value, key) {
                         if ( value ) {
                             options.push(key + '=' + encodeURIComponent(value));
                         }
                     });
                     if ( options.length > 0 ) {
-                        scope.getParams = '?' + options.join('&');
+                        scope.params = '?' + options.join('&');
                     }
                 },
                 /**
@@ -116,15 +116,22 @@
                 },
                 link: function($scope, element, attrs)
                 {
-                    scope         = $scope;
-                    scope.options = {};
+                    scope           = $scope;
+                    scope.options   = {
+                        s : undefined,              // size
+                        f : undefined,              // forceDefault
+                        d : undefined               // default image
+                    };
+                    scope.params    = '';           // query params of options
+                    scope.hash      = '';           // md5 of email
+
                     scope.$watch( 'email',         onEmailChange   );
                     scope.$watch( 'size',          onSizeChange    );
                     scope.$watch( 'forceDefault',  onForceDefault  );
                     scope.$watch( 'defaultImage',  onImageChanged  );
 
                 },
-                template : '<img ng-src="http://www.gravatar.com/avatar/{{hash}}{{getParams}}"/>'
+                template : '<img ng-src="http://www.gravatar.com/avatar/{{hash}}{{params}}"/>'
             };
         };
 

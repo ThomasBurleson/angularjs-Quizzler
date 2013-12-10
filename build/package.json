@@ -1,0 +1,43 @@
+{
+	"author": "Thomas Burleson <ThomasBurleson@Gmail.com>",
+	"name": "Quizzler",
+	"version": "0.0.2",
+	"homepage": "http://mindspace.github.io/Desk-Quizzler/",
+	"bugs": "",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Mindspace/Desk-Quizzler"
+	},
+	"dependencies": {
+    },
+	"devDependencies": {
+		"grunt": "~0.4.1",
+		"grunt-recess": "~0.3.0",
+		"grunt-contrib-clean": "~0.4.1",
+		"grunt-contrib-copy": "~0.4.1",
+		"grunt-contrib-jshint": "~0.4.3",
+		"grunt-contrib-concat": "~0.3.0",
+		"grunt-contrib-watch": "~0.4.0",
+		"grunt-contrib-uglify": "~0.2.0",
+		"grunt-karma": "~0.7.1",
+		"grunt-ngmin": "0.0.2",
+		"grunt-html2js": "~0.1.3",
+		"grunt-conventional-changelog": "~0.1.1",
+		"grunt-bump": "0.0.6",
+		"karma-ng-scenario": "~0.1.0",
+		"grunt-contrib-connect": "~0.5.0",
+		"grunt-shell": "~0.3.1",
+		"karma-junit-reporter": "~0.1",
+		"protractor": "~0.13.0",
+		"grunt-express": "~1.0",
+		"karma-ie-launcher": "~0.1.1",
+		"karma-safari-launcher": "~0.1.1",
+		"karma-opera-launcher": "~0.1.0",
+		"xml2js": "~0.2.8",
+		"open": "0.0.4",
+		"grunt-docular": "~0.1.2",
+		"hogan.js": "~2.0.0",
+		"grunt-jsbeautifier": "~0.2.2",
+		"grunt-contrib-requirejs": "~0.4.1"
+	}
+}

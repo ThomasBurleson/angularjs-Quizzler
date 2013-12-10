@@ -14,7 +14,7 @@
 (function ( define ) {
     "use strict";
 
-    var QUIZ_TEMPLATE = "/assets/data/quiz_{id}.json",
+    var QUIZ_TEMPLATE = "./assets/data/quiz_{id}.json",
         dependencies  = [
             'utils/supplant',
             'utils/Factory',

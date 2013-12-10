@@ -33,6 +33,7 @@
                 $scope.title  = session.score ? session.score.quizName   : 0;
                 $scope.grade  = session.score ? session.score.totalScore : 0;
                 $scope.scores = session.score ? session.score.items      : [ ];
+                $scope.email  = session.account.email;
 
 
                 $scope.logout = session.logout;
