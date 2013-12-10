@@ -2,6 +2,8 @@
 
 Click here to use the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/loginl)
 
+---
+
 ### Purpose of the `Quizzler` Challenge
 
 The purpose of the `Quizzler` challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their challenge is to create an online HTML5 application... and it is a non-trivial request imposed on the candidate.
