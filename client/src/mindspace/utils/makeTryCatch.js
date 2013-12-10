@@ -13,7 +13,7 @@
  */
 (function (angular)
 {
-	"use strict";
+    "use strict";
 
     define( [], function()
     {
