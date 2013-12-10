@@ -1,18 +1,15 @@
 ![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
 
+*  Click here to use the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/loginl)
+*  Click here to review the [Live Jasmine TestRunner](http://mindspace.github.io/Desk-Quizzler/test/testRunner.html) output.
+
+---
+
 ### Purpose of the `Quizzler` Challenge
 
 The purpose of the `Quizzler` challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their challenge is to create an online HTML5 application... and it is a non-trivial request imposed on the candidate.
 
-But it has HUGE benefits in  that allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate. It also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project than would otherwise be available in a screensharing session such as **Google Hangout**. 
-
-Upon completion [or partial completion] of the challenge, the review teams' assessment will consider factors such as:
-
-* motivation, attitude, and competence
-* skill levels, best practices, coding style, clarity-of-code
-* architecture solutions, component implementation, and DRY-ness
-* solution usability and user testing features
-* and more…
+But such a challenge has HUGE benefits in that it (1) allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate and (2) it also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project than would otherwise be available in a single screensharing session such as **Google Hangout**. 
 
 ---
 
@@ -22,7 +19,15 @@ The developer candidate is asked to implement an AngularJS web application that 
 
 *  Six (6) questions are initially provided; without answers to the actual questions. 
 
-Once the developer has **finished** (to whatever level they decide is appropriate), the developer should configure a GitHub repository as well as the running app (how Quizzler is deployed it is up to the developer). The review team will review Quizzler based on accuracy, best ­practice, style, and... attitude.
+Once the developer has **finished** (to whatever level they decide is appropriate), the developer should configure a GitHub repository as well as an online verion of the live app. How the demo is deployed is up to the developer. 
+
+Upon completion [or partial completion] of the challenge, the review team's assessment will consider factors such as:
+
+* motivation, attitude, and competence
+* skill levels, best practices, coding style, clarity-of-code
+* architecture solutions, component implementation, and DRY-ness
+* solution usability and user testing features
+* and more…
 
 The developer should note that the challenge is expected to require approximately 20-40 hours of effort.
 
@@ -48,9 +53,9 @@ Additionally the developer should:
 
 ### Implementation
 
-Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge presented to developers who are interviewing at `www.<xxx>.com`.
+Quizzler is an AngularJS `online quiz builder and testing` application; developed as a result of a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
-Snapshots of running application:
+You can either walkthru the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/login) or simply look at snapshots of running application:
 
 *  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
 *  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
