@@ -33,7 +33,6 @@
                     };
                 },
                 _session         = null,
-                _loginController = null,
                 _scope           = null,
                 _location       = null,
                 _browser        = null,
@@ -71,7 +70,7 @@
 
                 // Create instances LoginController with known scope...
 
-                _loginController = $controller( LoginController, {
+                $controller( LoginController, {
                     authenticator   : $injector.get( "authenticator" ),
                     $q              : $injector.get( "$q" ),
                     $log            : $injector.get( '$log' ),
@@ -84,8 +83,7 @@
 
             afterEach( function( )
             {
-                _loginController = null;
-                _scope           = null;
+                _scope = null;
             });
 
 
