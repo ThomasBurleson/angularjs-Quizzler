@@ -20,9 +20,9 @@
     {
         describe( "Tests for LoginController", function()
         {
-                /**
-                 * $location.path() replacement... for testing
-                 */
+            /**
+             * $location.path() replacement... for testing
+             */
             var LocationMock = function (root)
                 {
                     root = root || '';
@@ -32,28 +32,11 @@
                         return path ? root = path : root;
                     };
                 },
-                /**
-                 * Same API, no promises...
-                 * @constructor
-                 */
-                AuthenticatorMock = function() {
-                    return {
-                        login : function( email, password )
-                        {
-                            return {
-                                sessionID : "someDummyGUID",
-                                email     : email
-                            }
-                        },
-                        logout : function()
-                        {
-                            return { session : null };
-                        }
-                    };
-                },
+                _session         = null,
                 _loginController = null,
                 _scope           = null,
-                $location        = null,
+                _location       = null,
+                _browser        = null,
                 appName          = 'test.quizzler';
 
 
@@ -69,8 +52,8 @@
 
                 module( function( $provide )
                 {
-                    $provide.service( 'session',         Session            );
-                    $provide.service( 'authenticator',   AuthenticatorMock  );
+                    $provide.service( 'session',         Session        );
+                    $provide.service( 'authenticator',   Authenticator  );
 
                 });
 
@@ -78,27 +61,23 @@
 
             beforeEach( inject( function( $rootScope, $injector, $controller )
             {
-                var $q            = $injector.get( "$q" ),
-                    $log          = $injector.get( '$log' ),
-                    $http         = $injector.get( "$http" ),
-                    session       = $injector.get( "session" ),
-                    authenticator = $injector.get( "authenticator" );
+                _browser         = $injector.get( "$browser" );
+                _location        = $injector.get( "$location" );
+                _session         = $injector.get( "session" );
+                _scope           = $rootScope.$new();
 
-                // Prepare to intercept $location navigation calls...
-
-                $location = $injector.get( "$location" );
-                spyOn( $location, 'path').andCallFake( new LocationMock('/login').path );
+                // Prepare to intercept _location navigation calls...
+                spyOn( _location, 'path').andCallFake( new LocationMock('/login').path );
 
                 // Create instances LoginController with known scope...
 
-                _scope           = $rootScope.$new();
                 _loginController = $controller( LoginController, {
-                    session         : session,
-                    authenticator   : authenticator,
+                    authenticator   : $injector.get( "authenticator" ),
+                    $q              : $injector.get( "$q" ),
+                    $log            : $injector.get( '$log' ),
+                    session         : _session,
                     $scope          : _scope,
-                    $q              : $q,
-                    $log            : $log,
-                    $location       : $location
+                    $location       : _location
                 });
 
             }));
@@ -123,53 +102,49 @@
                 expect( _scope.logout ).toBeDefined();
             });
 
+
             it('valid login should create a valid session', function()
             {
                 _scope.email = "ThomasBurleson@Gmai.com";
                 _scope.password = "slaveToExcellence";
 
-                runs( function()
-                {
-                    return _scope
-                              .submit()
-                              .then( function( session )
-                              {
-                                 expect( session.sessionID.length ).toBeGreaterThan( 0 );
-                                 expect( $location.path()).toBe( '/quiz' );
-                              });
-                });
+                _scope.submit();
+
+                // Since submit() internally uses promises...
+                _browser.defer.flush();
+
+                expect( _session.sessionID.length ).toBeGreaterThan( 0 );
+                expect( _location.path()).toBe( '/quiz' );
+
             });
 
             it('invalid login should create a valid session', function()
             {
-                _scope.email = "";
+                _scope.email    = "";
                 _scope.password = "";
 
-                runs( function()
-                {
-                    return _scope
-                              .submit()
-                              .catch( function( session )
-                              {
-                                  expect( session.sessionID ).toBeNull( );
-                              });
-                });
+                _scope.submit();
+
+                // Since submit() internally uses promises...
+                _browser.defer.flush();
+
+                expect( _session.sessionID ).toBeNull( );
             });
 
-            it('logout should clear current session', inject( function( session )
+            it('logout should clear current session', function()
             {
-                session.sessionID = "someDummyGUID";
+                _session.sessionID = "someDummyGUID";
 
-                runs( function() {
-                    return _scope
-                              .logout()
-                              .then( function( response )
-                              {
-                                  expect( response.sessionID ).toBeNull( );
-                                  expect( $location.path()).toBe( '/login' );
-                              });
-                });
-            }));
+                _scope.logout();
+
+                // Since submit() internally uses promises...
+                _browser.defer.flush();
+
+                expect( _session.sessionID ).toBeNull( );
+                expect( _location.path()).toBe( '/login' );
+
+            });
+
 
         });
 

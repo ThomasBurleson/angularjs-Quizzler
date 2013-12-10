@@ -19,6 +19,6 @@
     "commit": "6e6c85637c9ae789fef3bd56536de9f8d4ee11e8"
   },
   "_source": "git://github.com/Mindspace/bower-angular-specs.git",
-  "_target": "0.0.1",
+  "_target": "~0.0.1",
   "_originalSource": "angular-specs"
 }

@@ -1,21 +1,21 @@
 
 $ViewDirective.$inject = ['$state', '$compile', '$controller', '$injector', '$anchorScroll'];
 function $ViewDirective(   $state,   $compile,   $controller,   $injector,   $anchorScroll) {
-  // TODO: Change to $injector.has() when we version bump to Angular 1.1.5.
-  // See: https://github.com/angular/angular.js/blob/master/CHANGELOG.md#115-triangle-squarification-2013-05-22
-  var $animator; try { $animator = $injector.get('$animator'); } catch (e) { /* do nothing */ }
+  var $animator = $injector.has('$animator') ? $injector.get('$animator') : false;
   var viewIsUpdating = false;
 
   var directive = {
     restrict: 'ECA',
     terminal: true,
+    priority: 1000,
     transclude: true,
     compile: function (element, attr, transclude) {
       return function(scope, element, attr) {
         var viewScope, viewLocals,
             name = attr[directive.name] || attr.name || '',
             onloadExp = attr.onload || '',
-            animate = isDefined($animator) && $animator(scope, attr);
+            animate = $animator && $animator(scope, attr),
+            initialView = transclude(scope);
 
         // Returns a set of DOM manipulation functions based on whether animation
         // should be performed
@@ -42,7 +42,7 @@ function $ViewDirective(   $state,   $compile,   $controller,   $injector,   $an
         };
 
         // Put back the compiled initial view
-        element.append(transclude(scope));
+        element.append(initialView);
 
         // Find the details of the parent view directive (if any) and use it
         // to derive our own qualified view name, then hang our own details
@@ -86,7 +86,7 @@ function $ViewDirective(   $state,   $compile,   $controller,   $injector,   $an
             view.state = null;
 
             // Restore the initial view
-            return render.restore(transclude(scope), element);
+            return render.restore(initialView, element);
           }
 
           viewLocals = locals;

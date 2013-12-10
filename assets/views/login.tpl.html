@@ -19,11 +19,11 @@
             </div>
         </div>
 
-            <form ng-submit="submit();" novalidate name="login">
+            <form ng-submit="submit();" name="login">
                 <div class="textbox-wrap">
                     <div class="input-group">
                         <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
-                        <input type="email" ng-model="email" placeholder="eMail" required="true" class="form-control" >
+                        <input type="email" ng-model="email" ng-focus placeholder="eMail" required="true" class="form-control" >
                         <span class="field_msg"></span>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 <div class="textbox-wrap">
                     <div class="input-group">
                         <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
-                        <input type="password" ng-model="password" class="form-control" required="true" placeholder="Password" >
+                        <input type="password" ng-model="password" ng-focus  class="form-control" required="true" placeholder="Password" >
                         <span class="field_msg"></span>
                     </div>
                 </div>
