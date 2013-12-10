@@ -9,26 +9,26 @@
  */
 (function ()
 {
-	"use strict";
+    "use strict";
 
-	var dependencies = [ "utils/supplant", "utils/makeTryCatch", "utils/DateTime", "utils/BrowserDetect"];
+    var dependencies = [ "utils/supplant", "utils/makeTryCatch", "utils/DateTime", "utils/BrowserDetect"];
 
-	/**
-	 * Register the class with RequireJS.
-	 */
-	define(dependencies, function (supplant, makeTryCatch, DateTime, BrowserDetect)
-	{
-		/**
-		 * Constructor function
-		 */
-		var enhanceLogger = function ($log)
-		{
-			var separator = "::",
+    /**
+     * Register the class with RequireJS.
+     */
+    define(dependencies, function (supplant, makeTryCatch, DateTime, BrowserDetect)
+    {
+        /**
+         * Constructor function
+         */
+        var enhanceLogger = function ($log)
+        {
+            var separator = "::",
 
                 /**
                  * Capture the original $log functions; for use in enhancedLogFn()
                  */
-			    _$log = (function ($log)
+                _$log = (function ($log)
                 {
                     return {
                         log: $log.log,
@@ -109,13 +109,13 @@
                     return instance;
                 };
 
-			// Add special method to AngularJS $log
-			$log.getInstance = getInstance;
+            // Add special method to AngularJS $log
+            $log.getInstance = getInstance;
 
-			return $log;
-		};
+            return $log;
+        };
 
-		return enhanceLogger;
-	});
+        return enhanceLogger;
+    });
 
 })();

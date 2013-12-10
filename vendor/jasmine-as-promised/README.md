@@ -6,6 +6,8 @@ support in [Jasmine](https://github.com/pivotal/jasmine) for the promise-returni
 This library provides an extension of the Jasmine `Spec::runs()` to support Promises 
 and will auto-magically wait for the promise to resolve or reject before continuing with subsequent unit tests.
 
+Best of all... it supports **AngularJS** and will signficantly reduce the size of your test code (see bottom).
+
 ## The Old Way
 
 Until now you've been making do with manual solutions that explicity use `runs()` and `waitsFor()` 
@@ -191,7 +193,30 @@ bower install jasmine-as-promised
 
 And Bower will also auto-install the `Jasmine` library for you; as part of this library install.
 
+
 ## How Does This Work!?
 
 While this approach using the interceptor or *head hook* approach, it should be note that this is hack... albeit a reasonable one.
-Note that **Jasmine-as-Promised** just overrides the `Jasmine.Spec.prototype.runs` method; check the source for more details.
+Note that **Jasmine-as-Promised** just overrides the `window.runs` method (published as part of Jasmine core); check the source for more details.
+
+## Using with AngularJS
+
+When using AngularJS with Jasmine Specs (and Jasmine-as-Promised ), developers have two (2) types of test scenarios:
+
+*  Testing with [angular-mocks](https://github.com/angular/bower-angular-mocks) to use mock $http and mock $timeout(s).
+*  Testing with [angular-spec]() to use Jasmine tests with LIVE $http (real XHR) calls.
+
+Developers should study the test **Specs** prepared within [test_withAngular.html](https://github.com/Mindspace/jasmine-as-promised/blob/master/test/test_withAngular.html). 
+That file shows you how:
+
+*  script libraries should be loaded (for tests)
+*  Jasmine should be started
+*  angular services can be constructed with mock APIs
+*  Spec(s) can be implemented using `inject( )` and `runs( )`
+*  Angular Promise-based services can be easily tested.
+
+
+### Using RequireJS
+
+Developers should note that these do NOT show how RequireJS can also be used… that is out-of-scope for this project. 
+If you really need to know how to use RequireJS with your tests and Karma, contact me or come and see me at the 2014 NG-Conference

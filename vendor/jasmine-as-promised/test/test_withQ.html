@@ -60,6 +60,7 @@
 
             })( window.onload );
 
+            Q.longStackSupport = true;
 
             // ****************************************************
             // Unit Tests
@@ -91,6 +92,15 @@
                                     });
 
                         })
+                    });
+
+                    it("should provide the correct jasmine context to the runs function", function ()
+                    {
+                        runs( function()
+                        {
+                            expect( this ).toEqual(jasmine.any(jasmine.Spec));
+                            return Q.resolve(5);
+                        });
                     });
                 });
             }
