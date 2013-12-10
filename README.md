@@ -53,7 +53,7 @@ Additionally the developer should:
 
 ### Implementation
 
-Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge presented to developers who are interviewing at `www.<xxx>.com`.
+Quizzler is an AngularJS `online quiz builder and testing` application; developed as a result of a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
 You can either walkthru the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/login) or simply look at snapshots of running application:
 
