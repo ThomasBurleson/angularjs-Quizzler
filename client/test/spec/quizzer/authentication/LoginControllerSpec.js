@@ -144,9 +144,9 @@
                 runs( function() {
                     return _scope
                               .logout()
-                              .then( function( session )
+                              .then( function( response )
                               {
-                                  expect( session.sessionID ).toBeNull( );
+                                  expect( response.sessionID ).toBeNull( );
                                   expect( $location.path()).toBe( '/login' );
                               });
                 });
