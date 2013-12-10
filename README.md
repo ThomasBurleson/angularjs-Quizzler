@@ -11,14 +11,6 @@ The purpose of the `Quizzler` challenge is to present a **work-from-home** chall
 
 But such a challenge has HUGE benefits in that it (1) allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate and (2) it also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project than would otherwise be available in a single screensharing session such as **Google Hangout**. 
 
-Upon completion [or partial completion] of the challenge, the review team's assessment will consider factors such as:
-
-* motivation, attitude, and competence
-* skill levels, best practices, coding style, clarity-of-code
-* architecture solutions, component implementation, and DRY-ness
-* solution usability and user testing features
-* and more…
-
 ---
 
 ### The `Quizzler` Challenge
@@ -27,7 +19,15 @@ The developer candidate is asked to implement an AngularJS web application that 
 
 *  Six (6) questions are initially provided; without answers to the actual questions. 
 
-Once the developer has **finished** (to whatever level they decide is appropriate), the developer should configure a GitHub repository as well as an online verion of the live app. How the demo is deployed is up to the developer. The review team will review source and live app and evaluate accuracy, best ­practice, style, and... attitude.
+Once the developer has **finished** (to whatever level they decide is appropriate), the developer should configure a GitHub repository as well as an online verion of the live app. How the demo is deployed is up to the developer. 
+
+Upon completion [or partial completion] of the challenge, the review team's assessment will consider factors such as:
+
+* motivation, attitude, and competence
+* skill levels, best practices, coding style, clarity-of-code
+* architecture solutions, component implementation, and DRY-ness
+* solution usability and user testing features
+* and more…
 
 The developer should note that the challenge is expected to require approximately 20-40 hours of effort.
 
