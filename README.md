@@ -1,6 +1,6 @@
 ![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
 
-[Live Demo](http://mindspace.github.io/Desk-Quizzler)
+[Live Demo](http://mindspace.github.io/Desk-Quizzler/#/loginl)
 
 ### Purpose of the `Quizzler` Challenge
 
@@ -52,7 +52,7 @@ Additionally the developer should:
 
 Quizzler is an AngularJS `online quiz builder and testing` application; developed as a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
-You can either walkthru the [Live Demo](http://mindspace.github.io/Desk-Quizzler) or simply look at snapshots of running application:
+You can either walkthru the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/login) or simply look at snapshots of running application:
 
 *  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
 *  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
