@@ -53,7 +53,7 @@
         },
         {
             "question" : "Given this:",
-            "details"  : "<img src='/assets/data/images/q1_1.jpg' /><p>Which message will be returned by injecting this service and executing 'myService.getMessage()'?</p>",
+            "details"  : "<img src='./assets/data/images/q1_1.jpg' /><p>Which message will be returned by injecting this service and executing 'myService.getMessage()'?</p>",
             "choices"  : [
                 "Message one!",
                 "Message two!",

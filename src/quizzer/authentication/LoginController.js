@@ -120,7 +120,11 @@
                                                     $log.debug( "onResult_logout()" );
 
                                                     $scope.sessionID = null;
+                                                    session.sessionID = null;
+
                                                     errorMessage( "" );
+
+                                                    return session;
                                                 },
                                                 function onFault_login( fault )
                                                 {

@@ -36,15 +36,15 @@
 
             $routeProvider
                 .when( '/login', {
-                    templateUrl : "/assets/views/login.tpl.html",
+                    templateUrl : "./assets/views/login.tpl.html",
                     controller  : "LoginController"
                 })
                 .when( '/quiz/:question?', {
-                    templateUrl : "/assets/views/quiz.tpl.html",
+                    templateUrl : "./assets/views/quiz.tpl.html",
                     controller  : "TestController"
                 })
                 .when( '/scoring', {
-                    templateUrl : "/assets/views/score.tpl.html",
+                    templateUrl : "./assets/views/score.tpl.html",
                     controller  : "ScoreController"
                 })
                 .otherwise({
