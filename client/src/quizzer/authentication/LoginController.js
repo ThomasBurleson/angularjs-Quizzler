@@ -111,36 +111,36 @@
                     {
                         $log.debug( "onLogout( )" );
 
-                        return $log.tryCatch( function()
-                                {
-                                    return authenticator
-                                                .logout( )
-                                                .then( function onResult_logout( )
-                                                {
-                                                    $log.debug( "onResult_logout()" );
+                        $log.tryCatch( function()
+                        {
+                            return authenticator
+                                        .logout( )
+                                        .then( function onResult_logout( )
+                                        {
+                                            $log.debug( "onResult_logout()" );
 
-                                                    $scope.sessionID = null;
-                                                    session.sessionID = null;
+                                            $scope.sessionID = null;
+                                            session.sessionID = null;
 
-                                                    errorMessage( "" );
+                                            errorMessage( "" );
 
-                                                    return session;
-                                                },
-                                                function onFault_login( fault )
-                                                {
-                                                    fault = fault || SERVER_NOT_RESPONDING;
-                                                    $log.error( fault.toString() );
+                                            return session;
+                                        },
+                                        function onFault_login( fault )
+                                        {
+                                            fault = fault || SERVER_NOT_RESPONDING;
+                                            $log.error( fault.toString() );
 
-                                                    // force clear any previously valid session...
-                                                    session.sessionID = null;
-                                                    errorMessage( fault );
+                                            // force clear any previously valid session...
+                                            session.sessionID = null;
+                                            errorMessage( fault );
 
-                                                    if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
-                                                    if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
+                                            if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
+                                            if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
 
-                                                    return $q.rejected( session );
-                                                });
-                                });
+                                            return $q.rejected( session );
+                                        });
+                        });
                     };
 
 

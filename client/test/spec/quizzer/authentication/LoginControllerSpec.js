@@ -32,6 +32,25 @@
                         return path ? root = path : root;
                     };
                 },
+                /**
+                 * Same API, no promises...
+                 * @constructor
+                 */
+                AuthenticatorMock = function() {
+                    return {
+                        login : function( email, password )
+                        {
+                            return {
+                                sessionID : "someDummyGUID",
+                                email     : email
+                            }
+                        },
+                        logout : function()
+                        {
+                            return { session : null };
+                        }
+                    };
+                },
                 _loginController = null,
                 _scope           = null,
                 $location        = null,
@@ -50,8 +69,8 @@
 
                 module( function( $provide )
                 {
-                    $provide.service( 'session',         Session       );
-                    $provide.service( 'authenticator',   Authenticator );
+                    $provide.service( 'session',         Session            );
+                    $provide.service( 'authenticator',   AuthenticatorMock  );
 
                 });
 
