@@ -1,9 +1,9 @@
 /**
  * ******************************************************************************************************
  *
- *	 QuizModule
+ *   QuizModule
  *
- *	 Defines controllers and services for the Authentication Module Quiz
+ *   Defines controllers and services for the Authentication Module Quiz
  *
  *  @author     Thomas Burleson
  *  @date       December 2013

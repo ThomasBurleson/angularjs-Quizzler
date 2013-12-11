@@ -38,7 +38,7 @@
              */
             beforeEach( module( function( $provide )
             {
-               $provide.value('session', Session() );
+               $provide.value('session', new Session() );
 
             }));
 

@@ -1,9 +1,9 @@
 /**
  * ******************************************************************************************************
  *
- *	 Authenticator
+ *   Authenticator
  *
- *	 Data service proxy to Authentication API that authorizes and authenticates the specified user.
+ *   Data service proxy to Authentication API that authorizes and authenticates the specified user.
  *
  *  @author     Thomas Burleson
  *  @date       December, 2013

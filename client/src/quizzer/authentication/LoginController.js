@@ -100,8 +100,8 @@
                                             session.sessionID = null;
                                             errorMessage( fault.toString() );
 
-                                            if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
-                                            if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
+                                            if ( fault == TIMEOUT_RESPONSE ) { errorMessage( SERVER_NOT_RESPONDING ); }
+                                            if ( fault == PAGE_NOT_FOUND )   { errorMessage( PAGE_NOT_FOUND );        }
 
                                             return $q.reject( fault );
                                         });
@@ -135,8 +135,8 @@
                                             session.sessionID = null;
                                             errorMessage( fault );
 
-                                            if ( fault == TIMEOUT_RESPONSE ) errorMessage( SERVER_NOT_RESPONDING );
-                                            if ( fault == PAGE_NOT_FOUND )  errorMessage( PAGE_NOT_FOUND );
+                                            if ( fault == TIMEOUT_RESPONSE ) { errorMessage( SERVER_NOT_RESPONDING ); }
+                                            if ( fault == PAGE_NOT_FOUND )   { errorMessage( PAGE_NOT_FOUND );        }
 
                                             return $q.rejected( session );
                                         });

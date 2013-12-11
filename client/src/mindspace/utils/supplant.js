@@ -43,7 +43,7 @@
                     r = values;
 
                 try {
-                    for (var s in p) { r = r[p[s]];  };
+                    for (var s in p) { r = r[p[s]];  }
                 } catch(e){
                     r = a;
                 }

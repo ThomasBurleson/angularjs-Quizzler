@@ -92,9 +92,10 @@
 
                     runs( function()
                     {
+
                         return authenticator
                                     .login( userName,  password )
-                                    .catch( function( fault )
+                                    .then( null, function( fault )
                                     {
                                         expect( fault ).toNotBe( null );
                                     });

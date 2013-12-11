@@ -1,9 +1,9 @@
 /**
  * ******************************************************************************************************
  *
- *	 QuizDelegate
+ *   QuizDelegate
  *
- *	 Data service proxy to QuizDelegate API that loads Quiz JSON data and builds quiz instances
+ *   Data service proxy to QuizDelegate API that loads Quiz JSON data and builds quiz instances
  *
  *  @author     Thomas Burleson
  *  @date       December, 2013

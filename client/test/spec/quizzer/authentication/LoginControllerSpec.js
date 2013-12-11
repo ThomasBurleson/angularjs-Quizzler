@@ -10,13 +10,12 @@
     "use strict";
 
     var dependencies = [
-        'utils/Factory',
         'auth/Session',
         'auth/Authenticator',
         'auth/LoginController'
     ];
 
-    define( dependencies, function ( Factory, Session, Authenticator, LoginController )
+    define( dependencies, function ( Session, Authenticator, LoginController )
     {
         describe( "Tests for LoginController", function()
         {
@@ -34,8 +33,7 @@
                 },
                 _session         = null,
                 _scope           = null,
-                _location       = null,
-                _browser        = null,
+                _location        = null,
                 appName          = 'test.quizzler';
 
 
@@ -60,7 +58,6 @@
 
             beforeEach( inject( function( $rootScope, $injector, $controller )
             {
-                _browser         = $injector.get( "$browser" );
                 _location        = $injector.get( "$location" );
                 _session         = $injector.get( "session" );
                 _scope           = $rootScope.$new();
@@ -101,7 +98,7 @@
             });
 
 
-            it('valid login should create a valid session', function()
+            it('valid login should create a valid session', inject(function($timeout)
             {
                 _scope.email = "ThomasBurleson@Gmai.com";
                 _scope.password = "slaveToExcellence";
@@ -109,14 +106,14 @@
                 _scope.submit();
 
                 // Since submit() internally uses promises...
-                _browser.defer.flush();
+                $timeout.flush();
 
                 expect( _session.sessionID.length ).toBeGreaterThan( 0 );
                 expect( _location.path()).toBe( '/quiz' );
 
-            });
+            }));
 
-            it('invalid login should create a valid session', function()
+            it('invalid login should create a valid session', inject(function($timeout)
             {
                 _scope.email    = "";
                 _scope.password = "";
@@ -124,24 +121,24 @@
                 _scope.submit();
 
                 // Since submit() internally uses promises...
-                _browser.defer.flush();
+                $timeout.flush();
 
                 expect( _session.sessionID ).toBeNull( );
-            });
+            }));
 
-            it('logout should clear current session', function()
+            it('logout should clear current session', inject(function($timeout)
             {
                 _session.sessionID = "someDummyGUID";
 
                 _scope.logout();
 
                 // Since submit() internally uses promises...
-                _browser.defer.flush();
+                $timeout.flush();
 
                 expect( _session.sessionID ).toBeNull( );
                 expect( _location.path()).toBe( '/login' );
 
-            });
+            }));
 
 
         });
