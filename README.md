@@ -11,6 +11,8 @@ The purpose of the a challenge is to present a **work-from-home** challenge to d
 
 But such a challenge has HUGE benefits in that it (1) allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate and (2) it also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project than would otherwise be available in a single screensharing session such as **Google Hangout**. 
 
+Ideally, you have candidates to whom you can present this challenge... candidates that have not seen/studied the solution presented here. ;-)
+
 ---
 
 ### The `Quizzler` Challenge
