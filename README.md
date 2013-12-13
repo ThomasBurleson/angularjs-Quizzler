@@ -1,15 +1,17 @@
 ![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
 
-*  Click here to use the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/loginl)
-*  Click here to review the [Live Jasmine TestRunner](http://mindspace.github.io/Desk-Quizzler/test/testRunner.html) output.
+*  Click here to use the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/loginl)
+*  Click here to review the [Live Jasmine TestRunner](http://thomasburleson.github.io/angularjs-Quizzler/test/testRunner.html) output.
 
 ---
 
-### Purpose of the `Quizzler` Challenge
+### Purpose of a Challenge
 
-The purpose of the `Quizzler` challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their challenge is to create an online HTML5 application... and it is a non-trivial request imposed on the candidate.
+The purpose of the a challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their **challenge** is to create an online HTML5 application... And I preface the request with a comment that this is a non-trivial request imposed on the candidate.
 
 But such a challenge has HUGE benefits in that it (1) allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate and (2) it also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project than would otherwise be available in a single screensharing session such as **Google Hangout**. 
+
+Ideally, you have candidates to whom you can present this challenge... candidates that have not seen/studied the solution presented here. ;-)
 
 ---
 
@@ -31,8 +33,8 @@ Upon completion [or partial completion] of the challenge, the review team's asse
 
 The developer should note that the challenge is expected to require approximately 20-40 hours of effort.
 
-*  See the [Requirements PDF](https://github.com/Mindspace/Desk-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
-*  See the [Design Requirements](https://raw.github.com/Mindspace/Desk-Quizzler/master/docs/quiz_comps.jpg)
+*  See the [Requirements PDF](https://github.com/thomasburleson/angularjs-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
+*  See the [Design Requirements](https://github.com/thomasburleson/angularjs-Quizzler/master/docs/quiz_comps.jpg)
 
 ### Technical Requirements
 
@@ -53,9 +55,12 @@ Additionally the developer should:
 
 ### Implementation
 
+>
+<strong>Before</strong> you explore the source code for Quizzler, I highly recommend that you first read the <a href="http://solutionoptimist.com/2013/09/30/requirejs-angularjs-dependency-injection/">Dependency Injection using RequireJS and AngularJS</a> tutorial; since all of the source uses both RequireJS injection and AngularJS injection.
+
 Quizzler is an AngularJS `online quiz builder and testing` application; developed as a result of a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
-You can either walkthru the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/login) or simply look at snapshots of running application:
+You can either walkthru the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/login) or simply look at snapshots of running application:
 
 *  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
 *  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
