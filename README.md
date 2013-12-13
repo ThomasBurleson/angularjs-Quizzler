@@ -54,7 +54,7 @@ Additionally the developer should:
 ### Implementation
 
 >
-<strong>Before</strong> you continue reading this article, I highly recommend that you first read the <a href="http://solutionoptimist.com/2013/09/30/requirejs-angularjs-dependency-injection/">Dependency Injection using RequireJS and AngularJS</a> tutorial; since many of the examples use RequireJS `define()` and dependency injection.
+<strong>Before</strong> you explore the source code for Quizzler, I highly recommend that you first read the <a href="http://solutionoptimist.com/2013/09/30/requirejs-angularjs-dependency-injection/">Dependency Injection using RequireJS and AngularJS</a> tutorial; since many of the examples use RequireJS `define()` and dependency injection.
 
 Quizzler is an AngularJS `online quiz builder and testing` application; developed as a result of a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
