@@ -1,7 +1,7 @@
 ![quizzler_workflow](https://f.cloud.github.com/assets/210413/1701194/d97319f4-6046-11e3-8442-05b549afaa1a.jpg)
 
-*  Click here to use the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/loginl)
-*  Click here to review the [Live Jasmine TestRunner](http://mindspace.github.io/Desk-Quizzler/test/testRunner.html) output.
+*  Click here to use the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/loginl)
+*  Click here to review the [Live Jasmine TestRunner](http://thomasburleson.github.io/angularjs-Quizzler/test/testRunner.html) output.
 
 ---
 
@@ -31,8 +31,8 @@ Upon completion [or partial completion] of the challenge, the review team's asse
 
 The developer should note that the challenge is expected to require approximately 20-40 hours of effort.
 
-*  See the [Requirements PDF](https://github.com/Mindspace/Desk-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
-*  See the [Design Requirements](https://raw.github.com/Mindspace/Desk-Quizzler/master/docs/quiz_comps.jpg)
+*  See the [Requirements PDF](https://github.com/thomasburleson/angularjs-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
+*  See the [Design Requirements](https://github.com/thomasburleson/angularjs-Quizzler/master/docs/quiz_comps.jpg)
 
 ### Technical Requirements
 
@@ -55,7 +55,7 @@ Additionally the developer should:
 
 Quizzler is an AngularJS `online quiz builder and testing` application; developed as a result of a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
-You can either walkthru the [Live Demo](http://mindspace.github.io/Desk-Quizzler/#/login) or simply look at snapshots of running application:
+You can either walkthru the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/login) or simply look at snapshots of running application:
 
 *  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
 *  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
