@@ -70,12 +70,17 @@ You can either walkthru the [Live Demo](http://thomasburleson.github.io/angularj
 Using AngularJS (v1.2.x) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstrapping.
 HeadJS is used to asynchronously load the required scripts **before** bootstrapping the NG application.
 
-Quizzler supports 1…n quizes defined in JSON format. The quiz data is dynamically loaded and the dynamic workflow will guide the tester thru 1..n questions. Quiz questions can contain HTML with references to external images, etc.
+*  Quizzler supports 1…n quizes defined in JSON format. 
+*  The quiz data is dynamically loaded and the dynamic workflow will guide the tester thru 1..n questions. 
+*  Quiz questions can contain HTML with references to external images, etc.
 
 ![screen shot 2013-12-08 at 11 15 22 am](https://f.cloud.github.com/assets/210413/1701199/33d97d70-6047-11e3-8768-aa7ad52996de.jpg)
 
 
-Robust logging is used through-out the application and even logging during the bootstrapping process: before `$log` injection is available. Extra application features added to the implementation include history navigation, session management, question validation, and more. 
+Robust logging is used through-out the application and even logging during the bootstrapping process: before `$log` injection is available. 
+
+>
+Extra application features added to the implementation include history navigation, session management, question validation, and more. 
 
 ![quizzler_logging](https://f.cloud.github.com/assets/210413/1701319/e169e7ba-604f-11e3-9f61-8fb45fad300e.jpg)
 
