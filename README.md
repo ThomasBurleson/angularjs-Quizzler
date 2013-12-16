@@ -53,14 +53,14 @@ Additionally the developer should:
 
 ---
 
-### Implementation
+### Application Implementation
 
 >
 <strong>Before</strong> you explore the source code for Quizzler, I highly recommend that you first read the <a href="http://solutionoptimist.com/2013/09/30/requirejs-angularjs-dependency-injection/">Dependency Injection using RequireJS and AngularJS</a> tutorial; since all of the source uses both RequireJS injection and AngularJS injection.
 
-Quizzler is an AngularJS `online quiz builder and testing` application; developed as a result of a challenge presented to developers who are interviewing at `www.<xxx>.com`.
+Quizzler is an AngularJS `online quiz builder and testing` application; developed as a deliverable to a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
-You can either walkthru the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/login) or simply look at snapshots of running application:
+Visitors can either walkthru the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/login) or simply look at snapshots of running application:
 
 *  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
 *  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
@@ -78,7 +78,7 @@ HeadJS is used to asynchronously load the required scripts **before** bootstrapp
 ![screen shot 2013-12-08 at 11 15 22 am](https://f.cloud.github.com/assets/210413/1701199/33d97d70-6047-11e3-8768-aa7ad52996de.jpg)
 
 
-Robust logging is used through-out the application and even logging during the bootstrapping process: before `$log` injection is available. Extra application features added to the implementation include history navigation, session management, question validation, and more. 
+Robust logging is used through-out the application and even logging during the bootstrapping process: before `$log` injection is available; see my blog article [Using Decorators to Enhance AngularJS $log](http://solutionoptimist.com/2013/10/07/enhance-angularjs-logging-using-decorators/) for details. Extra application features added to the implementation include Authentication module, history navigation, session management, question validation, and more. 
 
 >
 ![quizzler_logging](https://f.cloud.github.com/assets/210413/1701319/e169e7ba-604f-11e3-9f61-8fb45fad300e.jpg)
