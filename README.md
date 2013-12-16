@@ -74,6 +74,7 @@ HeadJS is used to asynchronously load the required scripts **before** bootstrapp
 *  The quiz data is dynamically loaded and the dynamic workflow will guide the tester thru 1..n questions. 
 *  Quiz questions can contain HTML with references to external images, etc.
 
+>
 ![screen shot 2013-12-08 at 11 15 22 am](https://f.cloud.github.com/assets/210413/1701199/33d97d70-6047-11e3-8768-aa7ad52996de.jpg)
 
 
