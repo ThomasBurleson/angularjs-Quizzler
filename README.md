@@ -7,7 +7,7 @@
 
 ### Purpose of a Challenge
 
-The purpose of the a challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their **challenge** is to create an online HTML5 application... And I preface the request with a comment that this is a non-trivial request imposed on the candidate.
+The purpose of the challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their **challenge** is to create an online HTML5 application... And I preface the request with a comment that this is a non-trivial request imposed on the candidate.
 
 But such a challenge has HUGE benefits in that it (1) allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate and (2) it also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project than would otherwise be available in a single screensharing session such as **Google Hangout**. 
 
