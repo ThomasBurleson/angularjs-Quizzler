@@ -91,6 +91,11 @@ Robust logging is used through-out the application and even logging during the b
 >
 ![quizzler_logging](https://f.cloud.github.com/assets/210413/1701319/e169e7ba-604f-11e3-9f61-8fb45fad300e.jpg)
 
+
+---
+
+### Installation
+
 Here is a brief explanation of the directory structures:
 
 *  `client`: directory contains the source code, css, html, and vendor libraries for Quizzler. 
@@ -98,15 +103,7 @@ Here is a brief explanation of the directory structures:
 *  `tools`: directory contains a CoffeeScript webserver that allows developers to easily run and debug `Quizzler`
 *  `docs`: directory contains the initial challenge requirements (PDF) and mockups.
 
-
----
-
-### Installation
-
-Download entire repository to local project directory.
-Open Terminal at *local* project directory.
-
-Use Bower to install vendor tools:
+To install the project, download entire repository to local project directory and open a Terminal window at *local* project directory. Then use **Bower** to install the vendor tools/libraries:
 
 ```
 cd ./build
