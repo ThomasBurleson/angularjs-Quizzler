@@ -67,7 +67,7 @@ You can either walkthru the [Live Demo](http://thomasburleson.github.io/angularj
 *  [Scoring ](https://f.cloud.github.com/assets/210413/1701316/f9660ac0-604e-11e3-9f88-86b080463345.jpg)
 
 
-Using AngularJS (v1.2.3) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstrapping.
+Using AngularJS (v1.2.x) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstrapping.
 HeadJS is used to asynchronously load the required scripts **before** bootstrapping the NG application.
 
 Quizzler supports 1…n quizes defined in JSON format. The quiz data is dynamically loaded and the dynamic workflow will guide the tester thru 1..n questions. Quiz questions can contain HTML with references to external images, etc.
