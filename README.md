@@ -7,7 +7,7 @@
 
 ### Purpose of a Challenge
 
-The purpose of the a challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their **challenge** is to create an online HTML5 application... And I preface the request with a comment that this is a non-trivial request imposed on the candidate.
+The purpose of the challenge is to present a **work-from-home** challenge to developers interviewing for positions on AngularJS projects. Their **challenge** is to create an online HTML5 application... And I preface the request with a comment that this is a non-trivial request imposed on the candidate.
 
 But such a challenge has HUGE benefits in that it (1) allows a *review team* myriad opportunities to perform a full-suite assessment of the *developer* candidate and (2) it also removes much of the `time` factor from the challenge. Candidates can use their own tools, own resources, and invest significantly more time into the project than would otherwise be available in a single screensharing session such as **Google Hangout**. 
 
@@ -53,31 +53,48 @@ Additionally the developer should:
 
 ---
 
-### Implementation
+### Application Implementation
 
 >
 <strong>Before</strong> you explore the source code for Quizzler, I highly recommend that you first read the <a href="http://solutionoptimist.com/2013/09/30/requirejs-angularjs-dependency-injection/">Dependency Injection using RequireJS and AngularJS</a> tutorial; since all of the source uses both RequireJS injection and AngularJS injection.
 
-Quizzler is an AngularJS `online quiz builder and testing` application; developed as a result of a challenge presented to developers who are interviewing at `www.<xxx>.com`.
+Quizzler is an AngularJS `online quiz builder and testing` application; developed as a deliverable to a challenge presented to developers who are interviewing at `www.<xxx>.com`.
 
-You can either walkthru the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/login) or simply look at snapshots of running application:
+Visitors can either walkthru the [Live Demo](http://thomasburleson.github.io/angularjs-Quizzler/#/login) or simply look at snapshots of running application:
 
 *  [Quizzler Login](https://f.cloud.github.com/assets/210413/1701314/e73aee92-604e-11e3-8624-db4537de9a90.jpg)
 *  [Quiz](https://f.cloud.github.com/assets/210413/1701315/f1409a72-604e-11e3-9331-989b5f81416c.jpg)
 *  [Scoring ](https://f.cloud.github.com/assets/210413/1701316/f9660ac0-604e-11e3-9f88-86b080463345.jpg)
 
 
-Using AngularJS (v1.2.3) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstrapping.
+Using AngularJS (v1.2.x) and RequireJS, `Quizzler` is architected with minimum coupling and crisp bootstrapping.
 HeadJS is used to asynchronously load the required scripts **before** bootstrapping the NG application.
 
-Quizzler supports 1…n quizes defined in JSON format. The quiz data is dynamically loaded and the dynamic workflow will guide the tester thru 1..n questions. Quiz questions can contain HTML with references to external images, etc.
+*  Quizzler supports 1…n quizes defined in JSON format. 
+*  The quiz data is dynamically loaded and the dynamic workflow will guide the tester thru 1..n questions. 
+*  Quiz questions can contain HTML with references to external images, etc.
 
+>
 ![screen shot 2013-12-08 at 11 15 22 am](https://f.cloud.github.com/assets/210413/1701199/33d97d70-6047-11e3-8768-aa7ad52996de.jpg)
 
+Extra application features added to the implementation include 
 
-Robust logging is used through-out the application and even logging during the bootstrapping process: before `$log` injection is available. Extra application features added to the implementation include history navigation, session management, question validation, and more. 
+*  Use of RequireJS with AngularJS
+*  Authentication module, 
+*  session management, 
+*  history navigation, 
+*  question validation, 
+*  enhanced logging,
+*  and more. 
 
+Robust logging is used through-out the application and even logging during the bootstrapping process: before `$log` injection is available; see my blog article [Using Decorators to Enhance AngularJS $log](http://solutionoptimist.com/2013/10/07/enhance-angularjs-logging-using-decorators/) for details.
+>
 ![quizzler_logging](https://f.cloud.github.com/assets/210413/1701319/e169e7ba-604f-11e3-9f61-8fb45fad300e.jpg)
+
+
+---
+
+### Installation
 
 Here is a brief explanation of the directory structures:
 
@@ -86,15 +103,7 @@ Here is a brief explanation of the directory structures:
 *  `tools`: directory contains a CoffeeScript webserver that allows developers to easily run and debug `Quizzler`
 *  `docs`: directory contains the initial challenge requirements (PDF) and mockups.
 
-
----
-
-### Installation
-
-Download entire repository to local project directory.
-Open Terminal at *local* project directory.
-
-Use Bower to install vendor tools:
+To install the project, download entire repository to local project directory and open a Terminal window at *local* project directory. Then use **Bower** to install the vendor tools/libraries:
 
 ```
 cd ./build
