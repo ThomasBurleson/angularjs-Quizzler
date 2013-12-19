@@ -34,7 +34,7 @@ Upon completion [or partial completion] of the challenge, the review team's asse
 The developer should note that the challenge is expected to require approximately 20-40 hours of effort.
 
 *  See the [Requirements PDF](https://github.com/thomasburleson/angularjs-Quizzler/blob/master/docs/Proveyourself.pdf?raw=true)
-*  See the [Design Requirements](https://github.com/thomasburleson/angularjs-Quizzler/master/docs/quiz_comps.jpg)
+*  See the [Design Requirements](https://f.cloud.github.com/assets/210413/1786317/ea38fd30-68f2-11e3-9efc-9ee48607a87f.jp)
 
 ### Technical Requirements
 
