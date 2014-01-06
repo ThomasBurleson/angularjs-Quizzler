@@ -1,6 +1,6 @@
 {
     "uid" : 1,
-    "name": "Wanna be a Front-end Engineer @ Desk?",
+    "name": "Wanna be a Front-end AngularJS Engineer",
 
     "questions" : [
         {
@@ -60,6 +60,41 @@
                 "Message three!"
             ],
             "answer"   : "2"
+        },
+        {
+            "question" : "When using Jasmine for TDD, what would you use to determine if an event handler was called:",
+            "choices"  : [
+                "spyOn(object, 'eventHandlerMethodName')!",
+                "stub(object, 'eventHandlerMethodName')!",
+                "mock(object, 'eventHandlerMethodName')!",
+                "all three",
+                "none of these"
+            ],
+            "answer"   : "0"
+        },
+        {
+            "question" : "In AngularJS, when do you need to use $scope.apply()? Which is the best answer:",
+            "choices"  : [
+                "Anytime you want to trigger databinding changes to update the UI.",
+                "Only after $http remote service calls",
+                "For any model changes during event callback/notifications",
+                "For async callbacks outside AngularJS context",
+                "all of these",
+                "none of these"
+            ],
+            "answer"   : "3"
+        },
+        {
+            "question" : "In AngularJS, where should DOM manipulation occur ?",
+            "choices"  : [
+                "Only in Controllers",
+                "Only in Directives",
+                "In Both Controllers and Directives",
+                "Only in async callback code",
+                "all of these",
+                "none of these"
+            ],
+            "answer"   : "1"
         }
     ]
 }
