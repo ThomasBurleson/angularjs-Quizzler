@@ -4,8 +4,8 @@
 module.exports = {
 
     srcDir      : "../client",
-    buildDir    : "../build/bin",
-    compileDir  : "../deploy/prod",
+    buildDir    : "./bin",
+    compileDir  : "./deploy/prod",
 
     appFiles: {
 

@@ -20,6 +20,7 @@
     "jquery": "~2.0.3",
     "underscore": "~1.5.1",
     "greensock-js": "1.10.2",
+    "highlightjs": "7.5.0",
     "requirejs": "~2.1.8",
     "requirejs-text": "2.0.10",
     "angular": "~1.2.3",

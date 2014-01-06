@@ -284,7 +284,7 @@ module.exports = function(grunt) {
             mod: {
                 options: {
                     baseUrl : '<%= buildDir %>/src',
-                    dir: '<%= compileDir %>/src/',
+                    dir: '<%= compileDir %>/src',
                     modules: [
                         {   name: 'quizzer/authentication/AuthenticationModule'     },
                         {   name: 'quizzer/quiz/QuizModule'                         }
@@ -343,11 +343,11 @@ module.exports = function(grunt) {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-    grunt.registerTask("gh-pages", [
+    grunt.registerTask("demo", [
         'copy:build_assets',
         'copy:build_appjs',
         'copy:build_vendorjs',
-        'copy:build_libs',
+        'copy:build_libs'
     ]);
 
 	/**
@@ -366,8 +366,7 @@ module.exports = function(grunt) {
 		'copy:build_assets',
 		'copy:build_appjs',
 		'copy:build_vendorjs',
-		'copy:build_libs',
-		'index:build'
+		'copy:build_libs'
 	]);
 
 	/**
@@ -530,8 +529,4 @@ module.exports = function(grunt) {
 		});
 	}
 
-	/**
-	 * Adding custom tasks from tasks folder
-	 */
-	grunt.loadTasks('tasks');
 };
