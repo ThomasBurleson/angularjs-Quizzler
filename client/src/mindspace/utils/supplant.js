@@ -1,7 +1,6 @@
 /**
  * @author      Thomas Burleson
  * @date        November, 2013
- * @copyright   2013 Mindspace LLC.
  * @description
  *
  *  String supplant global utility (similar to but more powerful than sprintf() ).
@@ -31,7 +30,7 @@
 (function( define ) {
     "use strict";
 
-    define( function ( )
+    define( [], function ( )
     {
         // supplant() method from Crockfords `Remedial Javascript`
 

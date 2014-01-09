@@ -1,8 +1,6 @@
 /**
  * @author     Thomas Burleson
  * @author     StackOverflow - Harto, http://stackoverflow.com/questions/2315408/how-do-i-format-a-timestamp-in-javascript-to-display-it-in-graphs-utc-is-fine
- *
- * @copyright  2013 Mindspace LLC.
  * @description
  *
  * DateTime utility class that spits out UTC timestamp strings usually used in a reporting, print-capable process.

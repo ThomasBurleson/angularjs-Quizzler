@@ -14,27 +14,22 @@
 (function ( define, angular ) {
     "use strict";
 
-    var dependencies = [
-        'quiz/delegates/QuizDelegate',
-        'quiz/controllers/TestController',
-        'quiz/controllers/ScoreController'
-    ];
+    define([
+            'quiz/delegates/QuizDelegate',
+            'quiz/controllers/TestController',
+            'quiz/controllers/ScoreController'
+        ],
+        function ( QuizDelegate, TestController, ScoreController )
+        {
+            var moduleName = "quizzer.Quiz";
 
-    /**
-     *
-     *
-     */
-    define( dependencies, function ( QuizDelegate, TestController, ScoreController )
-    {
-        var moduleName = "quizzer.Quiz";
+            angular.module( moduleName, [ ] )
+                .service( "quizDelegate",         QuizDelegate )
+                .controller( "TestController",    TestController )
+                .controller( "ScoreController",   ScoreController );
 
-        angular.module( moduleName, [ ] )
-            .service( "quizDelegate",         QuizDelegate )
-            .controller( "TestController",    TestController )
-            .controller( "ScoreController",   ScoreController );
-
-        return moduleName;
-    });
+            return moduleName;
+        });
 
 
 }( define, angular ));

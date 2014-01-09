@@ -10,12 +10,10 @@
 (function( define ) {
     "use strict";
 
-    var dependencies = [ 'mindspace/utils/supplant' ];
-
     /**
      * Register the SessionController class with RequireJS
      */
-    define( dependencies, function ( supplant )
+    define( [ 'utils/supplant' ], function ( supplant )
     {
         var VIEW_LOGIN = "/login",
 

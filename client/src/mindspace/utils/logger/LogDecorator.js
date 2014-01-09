@@ -1,7 +1,6 @@
 /**
  * @author      Thomas Burleson
  * @date        November, 2013
- * @copyright   2013 Mindspace LLC.
  *
  * @description
  *
@@ -14,12 +13,10 @@
 {
     "use strict";
 
-    var dependencies = ['utils/logger/LogEnhancer'];
-
     /**
      * Register the class with RequireJS.
      */
-    define(dependencies, function (enhanceLoggerFn)
+    define(['utils/logger/LogEnhancer'], function (enhanceLoggerFn)
     {
         /**
          * Decorate the $log to use inject the LogEnhancer features.

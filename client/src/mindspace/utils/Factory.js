@@ -1,7 +1,6 @@
 /**
  * @author      Thomas Burleson
  * @date        November, 2013
- * @copyright   2013 Mindspace LLC.
  * @description
  *
  *  Factory.instanceOf( )

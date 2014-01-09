@@ -3,9 +3,9 @@
  */
 module.exports = {
 
-    srcDir      : "../client",
-    buildDir    : "./bin",
-    compileDir  : "./deploy/prod",
+    devDir      : "../client",
+    buildDir    : "../bin",
+    compileDir  : "../deploy",
 
     appFiles: {
 
@@ -32,7 +32,8 @@ module.exports = {
         ],
 
         css : [
-            "../client/assets/css/bootstrap.css"
+            "../client/assets/css/bootstrap.css",
+            "../client/assets/css/monokai.css"
         ],
 
         less: "../client/src/assets/less/main.less"
@@ -62,7 +63,8 @@ module.exports = {
             "../client/vendor/headjs-notify/src/load.js",
             "../client/vendor/require/require.js",
             "../client/vendor/requirejs-text/text.js",
-            "../client/vendor/underscore.js"
+            "../client/vendor/underscore.js",
+            "../client/vendor/highlightjs/highlight.pack.js"
         ],
         css: [
         ]

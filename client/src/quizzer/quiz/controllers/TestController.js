@@ -10,12 +10,10 @@
 (function( define ) {
     "use strict";
 
-    var dependencies = [ 'utils/supplant' ];
-
     /**
      * Register the TestController class with RequireJS
      */
-    define( dependencies, function ( supplant )
+    define( [ 'utils/supplant' ], function ( supplant )
     {
         var VIEW_QUESTION = "/quiz/{index}",
             VIEW_SCORING  = "/scoring",

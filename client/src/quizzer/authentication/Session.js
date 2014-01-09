@@ -10,12 +10,10 @@
 (function (define ) {
     "use strict";
 
-    var dependencies = [ ];
-
     /**
      * Register the Session class with RequireJS
      */
-    define( dependencies, function ( ) {
+    define( [], function ( ) {
 
         var validate = function ( target, defaultVal )
             {

@@ -10,3 +10,5 @@
 /tools/webserver/node_modules/
 
 /build/npm-debug.log
+
+/bin/

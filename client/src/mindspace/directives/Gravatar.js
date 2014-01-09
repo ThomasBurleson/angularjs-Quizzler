@@ -25,18 +25,10 @@
     "use strict";
 
     /**
-     *  Declare the dependent files (encryption and supplant) that must be loaded and
-     *  injected (outside of AngularJS)
-     *
-     *  @type {Array}
-     */
-    var dependencies = [ 'mindspace/utils/crypto/md5' ];
-
-    /**
      * Register the Gravatar construction function with RequireJS
      *
      */
-    define( dependencies, function ( md5 )
+    define( [ 'mindspace/utils/crypto/md5' ], function ( md5 )
     {
             /**
              * Construction function

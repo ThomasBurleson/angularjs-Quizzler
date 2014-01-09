@@ -1,8 +1,6 @@
 /**
  * @author      Thomas Burleson
  * @date        November, 2013
- * @copyright   2013 Mindspace LLC.
- * @description
  *
  *     Often AngularJS users need to easy capture and log exceptions (with stacktraces) for easy debugging.
  *     When developers use Promise(s) as return values for their APIs, exceptions and rejects also need to be logged.
@@ -11,6 +9,7 @@
  *     cases for how `tryCatch()` can be applied to dramatically simplified error logging.
  *
  */
+
 (function (angular)
 {
     "use strict";

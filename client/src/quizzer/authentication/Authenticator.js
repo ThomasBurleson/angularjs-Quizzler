@@ -14,126 +14,125 @@
 (function ( define ) {
     "use strict";
 
-    var dependencies = [
-        'mindspace/utils/supplant',
-        'mindspace/utils/createGuid',
-        'mindspace/utils/crypto/md5'
-    ];
+    define([
+            'utils/supplant',
+            'utils/createGuid',
+            'utils/crypto/md5'
+        ],
+        function ( supplant, createGuid, md5 )
+        {
+            var Authenticator = function ( $http, $q, $log )
+                {
+                   $log = $log.getInstance( "Authenticator" );
 
-    define( dependencies, function ( supplant, createGuid, md5 )
-    {
-        var Authenticator = function ( $http, $q, $log )
-            {
-               $log = $log.getInstance( "Authenticator" );
+                        /**
+                         * Util function to build a resolved promise
+                         * @returns {promise|*|promise}
+                         */
+                    var makeResolved = function( response )
+                        {
+                            var dfd = $q.defer();
+                                dfd.resolve( response );
 
-                    /**
-                     * Util function to build a resolved promise
-                     * @returns {promise|*|promise}
-                     */
-                var makeResolved = function( response )
-                    {
-                        var dfd = $q.defer();
-                            dfd.resolve( response );
+                            return dfd.promise;
+                        },
+                        makeRejected = function( fault )
+                        {
+                            var dfd = $q.defer();
+                            dfd.reject( fault );
 
-                        return dfd.promise;
-                    },
-                    makeRejected = function( fault )
-                    {
-                        var dfd = $q.defer();
-                        dfd.reject( fault );
+                            return dfd.promise;
+                        },
 
-                        return dfd.promise;
-                    },
+                        /**
+                         * Request user authentication
+                         * @return Promise
+                         */
+                        loginUser = function( email, password )
+                        {
+                             $log.debug(
+                                 "loginUser( email={0}, password={1} )",
+                                 [ email, password ]
+                             );
 
-                    /**
-                     * Request user authentication
-                     * @return Promise
-                     */
-                    loginUser = function( email, password )
-                    {
-                         $log.debug(
-                             "loginUser( email={0}, password={1} )",
-                             [ email, password ]
-                         );
+                             // Normally we have remote REST services...
+                             // return $http.post( URL.LOGIN, { email : email, password : md5.encrypt(password) } );
 
-                         // Normally we have remote REST services...
-                         // return $http.post( URL.LOGIN, { email : email, password : md5.encrypt(password) } );
+                             return ( email === "" ) ?
+                                    makeRejected( "A valid email is required!" ) :
+                                    makeResolved({ session : createGuid(), email : email });
+                        },
 
-                         return ( email === "" ) ?
-                                makeRejected( "A valid email is required!" ) :
-                                makeResolved({ session : createGuid(), email : email });
-                    },
+                        /**
+                         * Logout user
+                         * @return Promise
+                         */
+                        logoutUser = function()
+                        {
+                             $log.debug( "logoutUser()" );
 
-                    /**
-                     * Logout user
-                     * @return Promise
-                     */
-                    logoutUser = function()
-                    {
-                         $log.debug( "logoutUser()" );
+                             // Normally we have remote REST services...
+                             // return $http.get( URL.LOGOUT );
 
-                         // Normally we have remote REST services...
-                         // return $http.get( URL.LOGOUT );
+                             return makeResolved({
+                                 session : null
+                             });
+                        },
 
-                         return makeResolved({
-                             session : null
-                         });
-                    },
+                        /**
+                         * Change user password
+                         * @return Promise
+                         */
+                        changePassword = function( email, newPassword, password )
+                        {
 
-                    /**
-                     * Change user password
-                     * @return Promise
-                     */
-                    changePassword = function( email, newPassword, password )
-                    {
+                            $log.debug( "changePassword ( email={0}, newPassword={1}", [email,  newPasword]);
 
-                        $log.debug( "changePassword ( email={0}, newPassword={1}", [email,  newPasword]);
+                            //  return $http.post( URL.PASSWORD_CHANGE, {
+                            //      userName    : email,
+                            //      oldPassword : md5.encrypt(password ),
+                            //      newPassword : md5.encrypt(newPassword)
+                            //  });
 
-                        //  return $http.post( URL.PASSWORD_CHANGE, {
-                        //      userName    : email,
-                        //      oldPassword : md5.encrypt(password ),
-                        //      newPassword : md5.encrypt(newPassword)
-                        //  });
+                            return makeResolved( {
+                                email    : email,
+                                password : newPassword
+                            });
+                        },
 
-                        return makeResolved( {
-                            email    : email,
-                            password : newPassword
-                        });
-                    },
+                         /**
+                          * Reset user password
+                          * @return Promise
+                          */
+                         resetPassword = function( email, password, hint )
+                         {
+                             $log.debug( "resetPassword( password={0}, hint={1}", [password, hint] );
 
-                     /**
-                      * Reset user password
-                      * @return Promise
-                      */
-                     resetPassword = function( email, password, hint )
-                     {
-                         $log.debug( "resetPassword( password={0}, hint={1}", [password, hint] );
+                            // return $http.post( URL.PASSWORD_RESET, {
+                            //     userName     : email,
+                            //     newPassword  : md5.encrypt(password),
+                            //     passwordHint : md5.encrypt(hint)
+                            // });
 
-                        // return $http.post( URL.PASSWORD_RESET, {
-                        //     userName     : email,
-                        //     newPassword  : md5.encrypt(password),
-                        //     passwordHint : md5.encrypt(hint)
-                        // });
-
-                        return changePassword( email,  password );
-                     };
+                            return changePassword( email,  password );
+                         };
 
 
-               // Publish Authentication delegate instance/object with desired API
+                   // Publish Authentication delegate instance/object with desired API
 
-               return {
+                   return {
 
-                   login           : loginUser,
-                   logout          : logoutUser,
-                   changePassword  : changePassword,
-                   resetPassword   : resetPassword
+                       login           : loginUser,
+                       logout          : logoutUser,
+                       changePassword  : changePassword,
+                       resetPassword   : resetPassword
 
-               };
+                   };
 
-            };
+                };
 
-        return [ "$http", "$q", "$log", Authenticator ];
+            return [ "$http", "$q", "$log", Authenticator ];
 
-    });
+        });
 
 }( define ));

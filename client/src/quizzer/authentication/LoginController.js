@@ -10,12 +10,10 @@
 (function( define ) {
     "use strict";
 
-    var dependencies = [ 'mindspace/utils/supplant' ];
-
     /**
      * Register the LoginController class with RequireJS
      */
-    define( dependencies, function ( supplant )
+    define( [ 'utils/supplant' ], function ( supplant )
     {
         var SERVER_NOT_RESPONDING  = "The Quizzler server is not responding",
             UNABLE_TO_CONNECT      = 'Unable to connect to secure Quizzler dataservices',

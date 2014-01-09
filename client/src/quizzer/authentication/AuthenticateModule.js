@@ -14,26 +14,25 @@
 (function ( define, angular ) {
     "use strict";
 
-    var dependencies = [
-        'auth/Session',
-        'auth/Authenticator',
-        'auth/SessionController',
-        'auth/LoginController'
-    ];
+    define([
+            'auth/Session',
+            'auth/Authenticator',
+            'auth/SessionController',
+            'auth/LoginController'
+        ],
+        function ( Session, Authenticator, SessionController, LoginController )
+        {
+            var moduleName = "quizzer.Authenticate";
 
-    define( dependencies, function ( Session, Authenticator, SessionController, LoginController )
-    {
-        var moduleName = "quizzer.Authenticate";
+            angular
+                .module(     moduleName,    [ ]                     )
+                .service(    "session",           Session           )
+                .service(    "authenticator",     Authenticator     )
+                .controller( "SessionController", SessionController )
+                .controller( "LoginController",   LoginController   );
 
-        angular
-            .module(     moduleName,    [ ]                     )
-            .service(    "session",           Session           )
-            .service(    "authenticator",     Authenticator     )
-            .controller( "SessionController", SessionController )
-            .controller( "LoginController",   LoginController   );
-
-        return moduleName;
-    });
+            return moduleName;
+        });
 
 
 }( define, angular ));

@@ -10,12 +10,10 @@
 (function( define ) {
     "use strict";
 
-    var dependencies = [ 'utils/supplant' ];
-
     /**
      * Register the ScoreController class with RequireJS
      */
-    define( dependencies, function ( supplant )
+    define( [ 'utils/supplant' ], function ( supplant )
     {
             /**
              * Constructor function used by AngularJS to create instances of
