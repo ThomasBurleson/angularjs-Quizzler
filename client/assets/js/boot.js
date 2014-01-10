@@ -26,14 +26,8 @@
             {
             appDir  : '',
             baseUrl : './src',
-            priority: 'angular',
             paths   :
             {
-                'text'         : './vendor/_custom/require/text',
-                'angular'      : './vendor/angular/angular',
-                'ngRoute'      : './vendor/angular-route/angular-route',
-                'ngSanitize'   : './vendor/angular-sanitize/angular-sanitize',
-
                 // Configure alias to full paths
 
                 'auth'         : './quizzer/authentication',
@@ -43,11 +37,6 @@
             },
             shim    :
             {
-                'angular':
-                {
-                    exports : 'angular',
-                    deps    : [  ]
-                },
                 'underscore':
                 {
                     exports : '_'
