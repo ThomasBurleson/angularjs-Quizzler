@@ -221,6 +221,15 @@ module.exports = function(grunt) {
     // Register Tasks
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    grunt.registerTask("dev", [
+        'clean:src',
+        'copy:build_assets',
+        'copy:build_appjs',
+        'copy:build_vendorjs',
+        'copy:dev_boot',
+        'copy:index'
+
+    ]);
 
     grunt.registerTask( "prod", [
         'clean:src',
@@ -230,16 +239,6 @@ module.exports = function(grunt) {
         'copy:index',
         "requirejs",
         "concat:source"
-    ]);
-
-    grunt.registerTask("default", [
-        'clean:src',
-        'copy:build_assets',
-        'copy:build_appjs',
-        'copy:build_vendorjs',
-        'copy:dev_boot',
-        'copy:index'
-
     ]);
 
 

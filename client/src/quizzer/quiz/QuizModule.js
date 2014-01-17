@@ -31,6 +31,5 @@
             return moduleName;
         });
 
-
 }( define, angular ));
 
