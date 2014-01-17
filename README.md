@@ -103,12 +103,14 @@ Here is a brief explanation of the directory structures:
 *  `tools`: directory contains a CoffeeScript webserver that allows developers to easily run and debug `Quizzler`
 *  `docs`: directory contains the initial challenge requirements (PDF) and mockups.
 
-To install the project, download entire repository to local project directory and open a Terminal window at *local* project directory. Then use **Bower** to install the vendor tools/libraries:
+To install the project, download entire repository to local project directory and open a Terminal window at *local* project directory. Then use **Bower** to install the vendor tools/libraries and **Grunt** to install the build tools:
 
 ```
 cd ./build
 bower install
+grunt update
 ```
+
 
 Use Terminal to start the CoffeeScript, built-in **Quizzler Web Server** web server; provided in the `tools` directory:
 
