@@ -5,7 +5,7 @@
  *  @author Thomas Burleson
  */
 
- (function( window, head ) {
+ (function( head ) {
     "use strict";
 
     head.js(
@@ -55,4 +55,4 @@
 
 
 
-}( window, head ));
+}( window.head ));

@@ -142,8 +142,8 @@
                     };
 
 
-                $scope.email     = "";
-                $scope.password  = "";
+                $scope.email     = "ThomasBurleson@gmail.com";
+                $scope.password  = "none";
                 $scope.sessionID = session.sessionID;
                 $scope.errorMessage = "";
 
