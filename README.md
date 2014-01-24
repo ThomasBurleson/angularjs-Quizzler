@@ -108,7 +108,7 @@ To install the project, download entire repository to local project directory an
 ```
 cd ./build
 bower install
-grunt update
+npm update
 ```
 
 
