@@ -7,8 +7,6 @@
 /deploy/
 /client/vendor/
 /build/node_modules/
-/tools/webserver/node_modules/
-
 /build/npm-debug.log
 
 /bin/

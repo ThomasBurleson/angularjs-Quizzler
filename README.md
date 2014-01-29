@@ -116,16 +116,27 @@ Use Terminal to start the CoffeeScript, built-in **Quizzler Web Server** web ser
 
 ```
 cd ./client
-coffee ../tools/webserver/webServer.coffee
+coffee ../tools/webserver/run.coffee
 ```
 
-or configure web server in your WebStrom/IntelliJ IDE using the following run/debug configuration:
+Launch webServer. Developers can use the `./client` directory as the webroot... So open browser and navigate to `http://localhost:8000/index.html`.
 
-![runconfiguration](https://f.cloud.github.com/assets/210413/1701282/85906e9e-604c-11e3-8996-3d57b606c89d.jpg)
 
-Launch webServer.
+A deployment process is now available to deploy your application in development mode or production mode. 
 
-A deployment process to concatenate, minimize, and deploy a production version of `Quizzler` is not currently available. In the meantime, developers can use the `./client` directory as the webroot... So open browser and navigate to `http://localhost:8000/index.html`.
+`Development` mode deploys copy all the class files to the webroot and uses RequireJS to lazy load required class files. Use the following Terminal commands:
+
+```
+cd ./build
+grunt dev
+```
+ 
+ Production deploys use Grunt RequireJS to concatenate, minimize, and deploy a production version of `Quizzler` .  All application code is compressed into `webroot/assets/js/quizzler.js`.
+ 
+```
+cd ./build
+grunt prod
+```
  
   
 ---
